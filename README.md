@@ -6,8 +6,14 @@
 
 ## General Info
 This browser based web application to ...
+<<<<<<< HEAD
 * Hi my name is James. I'm excited about this project because I get to create an application that I'm interested in. 
 
+=======
+* This is Rohil, I like sports
+
+	
+>>>>>>> 0e75cf6ef4809532dee0be692ade7f7af0147989
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
