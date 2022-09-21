@@ -6,11 +6,13 @@
 
 ## General Info
 This browser based web application to ...
-* Hi my name is Ean. I am ecited about this project because I gete tot use such a useful tool for my daily life!
+* Hi my name is Ean. I am excited about this project because I gete tot use such a useful tool for my daily life!
 
 * Hi my name is James. I'm excited about this project because I get to create an application that I'm interested in.
 
 * This is Rohil, I like sports
+
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
