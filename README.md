@@ -6,6 +6,8 @@
 
 ## General Info
 This browser based web application to ...
+* Hi my name is Ean. I am excited about this project because I get to use such a useful tool for my daily life!
+
 <<<<<<< HEAD
 * Hi my name is James. I'm excited about this project because I get to create an application that I'm interested in. 
 
