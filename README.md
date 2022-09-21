@@ -6,6 +6,8 @@
 
 ## General Info
 This browser based web application to ...
+* This is Rohil, I like sports
+
 	
 ## Technologies
 Technologies used for this project:
