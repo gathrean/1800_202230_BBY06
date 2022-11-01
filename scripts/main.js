@@ -1,5 +1,5 @@
 function insertName() {
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
             // Do something for the currently logged-in user here: 
