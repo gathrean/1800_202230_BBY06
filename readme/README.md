@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+## ScheDue
 
 * [General info](#general-info)
 * [Technologies](#technologies)
