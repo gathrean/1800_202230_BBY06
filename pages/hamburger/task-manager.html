@@ -9,6 +9,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+  </style>
 
   <!------------------------------------------>
   <!-- Bootstrap Library CSS JS CDN go here -->
@@ -18,6 +29,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
   <!-------------------------------------------------------->
   <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -32,7 +47,7 @@
   <!-- Other libraries go here -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <!-- Link to styles of your own -->
-  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+  <link rel="task-manager" href="./styles/task-manager.css">
 </head>
 
 <body>
@@ -58,13 +73,16 @@
             <a class="nav-link" href="calendar.html">Calendar View</a>
           </li>
           <li>
-            <a class="nav-link" href="task-manager.html">Task Manager</a>
+            <a class="nav-link" href="task-manager.html"><b>Task Manager</b></a>
           </li>
           <li>
             <a class="nav-link" href="free-time-time.html">Free-time Time</a>
           </li>
           <li>
-            <a class="nav-link" href="#">Summary</a>
+            <a class="nav-link" href="summary.html">Summary</a>
+          </li>
+          <li>
+            <a class="nav-link" href="profile.html">Profile</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -77,14 +95,28 @@
     </div>
   </nav>
 
-  <!-- [Developer #2] Welcome Page by Rohil-->
-  <div class="container-fluid bg-light text-dark p-5">
-    <div class="container bg-light p-5">
-      <h1 class="display-4">Task Manager <span id="name-goes-here"></span></h1>
-      <hr>
-      <p>This is the task manager view.</p>
+
+  <div class=" container rounded-3 border border-2 border-dark my-5 bg-white" style="height:auto;">
+    <div>
+    <h1 class=" h1">To Do List</h1> 
+<div class="row">
+        <div class=" col-8">
+    <input class=" py-3 form-control shadow" placeholder="input your task" type="text" id="inputText"> 
+        </div>
+        <div class="col-2">
+            <!-- <i onclick="addList()" class=" btn btn-dark rounded-pill fas fa-4x fa-plus-circle "></i> -->
+            <button onclick="addList()" class=" mt-2 btn btn-dark"> Add </button>
+        </div>
     </div>
-  </div>
+</div>
+    <hr>
+<div class="row rounded bg-white">
+    <div class=" col-12"> 
+    <ul class=" list-group" id="list"></ul>
+    </div> 
+</div> 
+</div>
+
   <!-- [Developer #3] Footer by James-->
   <footer class="py-3 bg-info">
     <div class="container">
@@ -97,9 +129,10 @@
   <!---------------------------------------------->
 
   <!-- Link to scripts of your own -->
-  <script src="./scripts/firebaseAPI_BBY06.js"></script>
-  <script src="./scripts/script.js"></script>
-  <script src="./scripts/main.js"></script>
+  <script src="/scripts/firebaseAPI_BBY06.js"></script>
+  <script src="/scripts/script.js"></script>
+  <script src="/scripts/main.js"></script>
+  <script src="/scripts/task-manager.js"></script>
 </body>
 
 </html>
