@@ -61,7 +61,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="/pages/home.html">
         <img src="/images/Schedue.png" height="100" />
-        ScheDue
+        <b>ScheDue</b>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,19 +70,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="calendar.html"><b>Calendar View</b></a>
+            <a class="nav-link" href="/pages/hamburger/calendar.html">Calendar View</a>
           </li>
           <li>
-            <a class="nav-link" href="task-manager.html">Task Manager</a>
+            <a class="nav-link" href="/pages/hamburger/task-manager.html">Task Manager</a>
           </li>
           <li>
-            <a class="nav-link" href="free-time-time.html">Free-time Time</a>
+            <a class="nav-link" href="/pages/hamburger/free-time-time.html">Free-time Time</a>
           </li>
           <li>
-            <a class="nav-link" href="summary.html">Summary</a>
+            <a class="nav-link" href="#">Summary</a>
           </li>
           <li>
-            <a class="nav-link" href="profile.html">Profile</a>
+            <a class="nav-link" href="#">Profile</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -95,35 +95,56 @@
     </div>
   </nav>
 
-  <!-- [Developer #2] Welcome Page by Rohil-->
+  <!-- Calendar-->
   <div class="mobile-header z-depth-1">
-
     <div class="row">
       <div class="col-2">
-        <a href="#" data-activates="sidebar" class="button-collapse">
-          <i class="material-icons">menu</i>
-        </a>
+        
       </div>
-      <div class="col">
-        <h4>Events</h4>
-      </div>
+      
     </div>
-
   </div>
 
-  <div class="main-wrapper">
-
-    <div class="sidebar-wrapper z-depth-0 side-nav" id="sidebar">
-
-      <div class="sidebar-title">
-        <h4>Events</h4>
-        <h5 id="eventDayName">Date</h5>
-      </div>
-      <div class="sidebar-events" id="sidebarEvents">
-        <div class="empty-message">Sorry, no events to selected date</div>
-      </div>
-
+  <button type="button" class="collapsible">Open Collapsible</button>
+  <div class="content">
+    <div class="sidebar-title">
+      <h4>Events</h4>
+      <h5 id="eventDayName">Date</h5>
     </div>
+
+    <div class="sidebar-events" id="sidebarEvents">
+      <div class="empty-message">Sorry, no events for Today</div>
+    </div>
+  </div>
+
+  <style>
+    .content {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+  </style>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+
+  <div class="main-wrapper">
 
     <div class="content-wrapper grey lighten-3">
       <div class="container">
@@ -206,7 +227,7 @@
     </div>
 
   </div>
-  
+
   <!-- [Developer #3] Footer by James-->
   <footer class="py-3 bg-info">
     <div class="container">
