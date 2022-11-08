@@ -65,11 +65,11 @@
 
   <!-- [Developer #1] Navbar by Ean-->
 
-  <nav class="navbar navbar-expand-lg navbar-primary bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="/pages/home.html">
         <img src="/images/Schedue.png" height="100" />
-        <b>ScheDue</b>
+        ScheDue
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,19 +78,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/pages/hamburger/calendar.html">Calendar View</a>
+            <a class="nav-link" href="calendar.html">Calendar View</a>
           </li>
           <li>
-            <a class="nav-link" href="/pages/hamburger/task-manager.html">Task Manager</a>
+            <a class="nav-link" href="task-manager.html">Task Manager</a>
           </li>
           <li>
-            <a class="nav-link" href="/pages/hamburger/free-time-time.html">Free-time Time</a>
+            <a class="nav-link" href="free-time-time.html"><b>Free-time Time</b></a>
           </li>
           <li>
-            <a class="nav-link" href="#">Summary</a>
+            <a class="nav-link" href="summary.html">Summary</a>
           </li>
           <li>
-            <a class="nav-link" href="#">Profile</a>
+            <a class="nav-link" href="profile.html">Profile</a>
           </li>
         </ul>
       </div>
@@ -98,28 +98,6 @@
   </nav>
 
   <!-- Calendar-->
-  <div class="mobile-header z-depth-1">
-    <div class="row">
-      <div class="col-2">
-        
-      </div>
-      
-    </div>
-  </div>
-
-  <button type="button" class="collapsible">Open Collapsible</button>
-  <div class="content">
-    <div class="sidebar-title">
-      <h4>Events</h4>
-      <h5 id="eventDayName">Date</h5>
-    </div>
-
-    <div class="sidebar-events" id="sidebarEvents">
-      <div class="empty-message">Sorry, no events for Today</div>
-    </div>
-  </div>
-
-
   <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -136,6 +114,20 @@
       });
     }
   </script>
+
+<button type="button" class="collapsible" id="todayDayName">
+  Open Collapsible
+</button>
+<div class="content">
+  <div class="sidebar-title">
+    <h4>Events</h4>
+    <h5 id="eventDayName">Date</h5>
+  </div>
+
+  <div class="sidebar-events" id="sidebarEvents">
+    <div class="empty-message">Sorry, no events for Today</div>
+  </div>
+</div>
 
   <div class="main-wrapper">
 
