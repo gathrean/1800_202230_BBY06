@@ -27,6 +27,10 @@
       overflow: hidden;
       transition: max-height 0.2s ease-out;
     }
+
+    .navbar {
+      height: auto;
+    }
   </style>
 
   <!------------------------------------------>
@@ -114,20 +118,17 @@
       });
     }
   </script>
+  <button type="button" class="collapsible" id="todayDayName"> Open Collapsible</button>
+  <div class="content">
+    <div class="sidebar-title">
+      <h4>Events</h4>
+      <h5 id="eventDayName">Date</h5>
+    </div>
 
-<button type="button" class="collapsible" id="todayDayName">
-  Open Collapsible
-</button>
-<div class="content">
-  <div class="sidebar-title">
-    <h4>Events</h4>
-    <h5 id="eventDayName">Date</h5>
+    <div class="sidebar-events" id="sidebarEvents">
+      <div class="empty-message">Sorry, no events for Today</div>
+    </div>
   </div>
-
-  <div class="sidebar-events" id="sidebarEvents">
-    <div class="empty-message">Sorry, no events for Today</div>
-  </div>
-</div>
 
   <div class="main-wrapper">
 
