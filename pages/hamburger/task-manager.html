@@ -90,27 +90,43 @@
     </div>
   </nav>
 
+<!--To do list-->
 
-  <div class=" container rounded-3 border border-2 border-dark my-5 bg-white" style="height:auto;">
+<div id="myDIV" class="header">
+  <h2>My To Do List</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  <li>Hit the gym</li>
+  <li class="checked">Pay bills</li>
+  <li>Meet George</li>
+  <li>Buy eggs</li>
+  <li>Read a book</li>
+  <li>Organize office</li>
+</ul>
+
+  <!-- <div class=" container rounded-3 border border-2 border-dark my-5 bg-white" style="height:auto;">
     <div>
-    <h1 class=" h1">To Do List</h1> 
-<div class="row">
+      <h1 class=" h1">To Do List</h1>
+      <div class="row">
         <div class=" col-8">
-    <input class=" py-3 form-control shadow" placeholder="input your task" type="text" id="inputText"> 
+          <input class=" py-3 form-control shadow" placeholder="input your task" type="text" id="inputText">
         </div>
         <div class="col-2">
-            <!-- <i onclick="addList()" class=" btn btn-dark rounded-pill fas fa-4x fa-plus-circle "></i> -->
-            <button onclick="addList()" class=" mt-2 btn btn-dark"> Add </button>
+          <i onclick="addList()" class=" btn btn-dark rounded-pill fas fa-4x fa-plus-circle "></i>
+          <button onclick="addList()" class=" mt-2 btn btn-dark"> Add </button>
         </div>
+      </div>
     </div>
-</div>
     <hr>
-<div class="row rounded bg-white">
-    <div class=" col-12"> 
-    <ul class=" list-group" id="list"></ul>
-    </div> 
-</div> 
-</div>
+    <div class="row rounded bg-white">
+      <div class=" col-12">
+        <ul class=" list-group" id="list"></ul>
+      </div>
+    </div>
+  </div> -->
 
   <!-- [Developer #3] Footer by James-->
   <footer class="py-3 bg-info">
