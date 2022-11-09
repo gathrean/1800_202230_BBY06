@@ -19,6 +19,18 @@
     footer {
       margin-top: auto;
     }
+
+    .navbar {
+      height: auto;
+    }
+
+    .bg-schedue-black {
+      background-color: #2b2a2b;
+    }
+
+    .bg-schedue-blue {
+      background: #4fbaf7;
+    }
   </style>
 
   <!------------------------------------------>
@@ -53,7 +65,7 @@
 
   <!-- [Developer #1] Navbar by Ean-->
 
-  <nav class="navbar navbar-expand-lg navbar-primary bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-schedue-black">
     <div class="container-fluid">
       <a class="navbar-brand" href="/pages/home.html">
         <img src="/images/Schedue.png" height="100" />
@@ -72,13 +84,13 @@
             <a class="nav-link" href="task-manager.html">Task Manager</a>
           </li>
           <li>
-            <a class="nav-link" href="free-time-time.html">Free-time Time</a>
+            <a class="nav-link" href="free-time-time.html"><b>Free-time Time</b></a>
           </li>
           <li>
             <a class="nav-link" href="summary.html">Summary</a>
           </li>
           <li>
-            <a class="nav-link" href="profile.html"><b>Profile</b></a>
+            <a class="nav-link" href="profile.html">Profile</a>
           </li>
         </ul>
       </div>
@@ -136,7 +148,7 @@
 </div>
 
   <!-- [Developer #3] Footer by James-->
-  <footer class="py-3 bg-info">
+  <footer class="py-3 bg-schedue-blue">
     <div class="container">
       ScheDue <span class="material-icons">copyright</span> Made by: Rohil, Ean, and James
     </div>
@@ -147,6 +159,7 @@
   <!---------------------------------------------->
 
   <!-- Link to scripts of your own -->
+  <script src="/scripts/calendar.js"></script>
   <script src="/scripts/firebaseAPI_BBY06.js"></script>
   <script src="/scripts/script.js"></script>
   <script src="/scripts/main.js"></script>

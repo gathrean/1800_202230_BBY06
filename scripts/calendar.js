@@ -250,3 +250,5 @@ addEventButton.onclick = function (e) {
    }
 
 }
+
+$('.collapse').collapse()
