@@ -1,1 +1,21 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 
+  footer {
+    margin-top: auto;
+  }
+
+  .navbar {
+    height: auto;
+  }
+
+  .bg-schedue-black {
+    background-color: #2b2a2b;
+  }
+
+  .bg-schedue-blue {
+    background: #4fbaf7;
+  }
