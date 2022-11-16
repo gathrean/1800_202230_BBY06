@@ -2,24 +2,46 @@ document.addEventListener('DOMContentLoaded', function() {
 var calendarEl = document.getElementById('calendar');
 
 var calendar = new FullCalendar.Calendar(calendarEl, {
-plugins: [ 'interaction', 'dayGrid', 'timegrid', 'bootstrap' ],
+plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list', 'bootstrap',],
+weekNumbers: true,
 timeZone: 'PST',
 editable: true,
-eventLimit: true, // allow "more" link when too many events
+eventLimit: true,
+selectable: true,
+eventClick: function(info) {
+  info.jsEvent.preventDefault();
+
+  if(info.event.url) {
+    window.open(info.event.url);
+  } else {
+    SVGFEDropShadowElement.fire(info.event.title, 'Start: '+info.event.start, 'question');
+  }
+},
+droppable: true,
+drop: function(info) {
+  if(checkbox.checked) {
+    info.draggedEl.parentNode.removeChild(info.draggedEl);
+  }
+},
+header: {
+  left: 'prev,next today',
+  center: 'title',
+  right: 'dayGridMonth, timeGridWeek, timeGridDay',
+},
 events: [
   {
-    title: 'All Day Event',
-    start: '2020-02-01'
+    title: 'Dinner with Jay Zed',
+    start: '2022-11-16'
   },
   {
     title: 'Long Event',
     start: '2020-02-07',
-    end: '2020-02-10'
+    end: '2020-02-10',
   },
   {
     groupId: 999,
     title: 'Repeating Event',
-    start: '2020-02-09T16:00:00'
+    start: '2022-02-09T16:00:00'
   },
   {
     groupId: 999,
@@ -65,4 +87,26 @@ events: [
 });
 
 calendar.render();
+});
+
+var events = document.getElementById('events');
+var checkbox = document.getElementById('move-event');
+var input = document.getElementById('input-event');
+var button = document.getElementById('add-event');
+
+new FullCalendarInteraction.Draggable(events, {
+  itemSelector: 'fc-event',
+  eventData: function(e) {
+    return {
+      title: e.innerText
+    };
+  }
+})
+
+button.addEventListener('click', function(){
+  var div = document.createElement('div');
+  var inval = document.createTextNode(input.value);
+  div.className = 'fc-event';
+  div.appendChild(inval);
+  events.appendChild(div);
 });

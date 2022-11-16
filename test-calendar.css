@@ -36,3 +36,15 @@ body {
       background-color: #fff;
       -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
       box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2); }
+
+  
+.container-event {
+  position: bottom;
+  z-index: 2;
+  background-color: #eeeeee;
+}
+
+.fc-event {
+  margin: 5px 0;
+  cursor: move;
+}
