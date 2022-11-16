@@ -12,6 +12,8 @@ function populateInfo() {
         var userName = userDoc.data().name;
         var userSchool = userDoc.data().school;
         var userCity = userDoc.data().city;
+        var userWork = userDoc.data().work;
+        var userDescription = userDoc.data().description;
 
         //if the data fields are not empty, then write them in to the form.
         if (userName != null) {
@@ -22,6 +24,12 @@ function populateInfo() {
         }
         if (userCity != null) {
           document.getElementById("cityInput").value = userCity;
+        }
+        if (userWork != null) {
+          document.getElementById("workInput").value = userWork;
+        }
+        if (userDescription != null) {
+          document.getElementById("description").value = userDescription;
         }
       });
     } else {
@@ -44,7 +52,7 @@ function saveUserInfo() {
   userSchool = document.getElementById("schoolInput").value; //get the value of the field with id="schoolInput"
   userWork = document.getElementById("workInput").value; //get the value of the field with id="workInput"
   userDescription = document.getElementById("description").value;
-  
+
   currentUser
     .update({
       name: userName,
