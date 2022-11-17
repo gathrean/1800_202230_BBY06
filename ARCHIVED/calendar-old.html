@@ -13,8 +13,9 @@
   <!-- Hamburger menu icon -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style></style>
-  
+  <style>
+  </style>
+
   <!------------------------------------------>
   <!-- Bootstrap Library CSS JS CDN go here -->
   <!------------------------------------------>
@@ -23,6 +24,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js">
+  </script>
 
   <!-------------------------------------------------------->
   <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -36,18 +39,23 @@
 
   <!-- Other libraries go here -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!------------------------------------------>
+  <!-- Calendar Package (imported by James) -->
+  <!------------------------------------------>
   <link href="fullcalendar/packages/core/main.css" rel="stylesheet" />
   <link href="fullcalendar/packages/daygrid/main.css" rel="stylesheet" />
   <link href="fullcalendar/packages/bootstrap/main.css" rel="stylesheet" />
   <link href="fullcalendar/packages/timegrid/main.css" rel="stylesheet" />
   <link href="fullcalendar/packages/list/main.css" rel="stylesheet" />
   <link href="fullcalendar/packages/interaction/main.css" rel="stylesheet" />
+
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Link to styles of your own -->
   <link href="/styles/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -55,8 +63,10 @@
   <!-- Your HTML Layout go here -->
   <!------------------------------>
 
+
   <!-- ScheDue NavBar -->
   <nav id="navbarPlaceholder"></nav>
+
 
   <!-- Body -->
   <div class="container my-3">
@@ -70,48 +80,52 @@
         <div class="fc-event">Event</div>
         <div class="fc-event">Event</div>
         <div class="fc-event">Event</div>
+        <div class="fc-event">Event</div>
       </div>
       <p>
+        <label for="move-event">Move Events</label>
         <input type="checkbox" id="move-event">
-        <label for="move-event">Move Event</label>
       </p>
       <p>
         <input type="text" id="input-event" class="form-control">
-        <button type="button" id="add-event" class="btn btn-primary mt-2">Add Event</button>
+        <button class="btn btn-primary mt-2">Add Event</button>
       </p>
     </div>
   </div>
 
-  <!-- ScheDue footer -->
-  <footer id="footerPlaceholder"></footer>
+  <!-- [Developer #3] Footer by James-->
+  <footer class="py-3 bg-schedue-blue">
+    <div class="container">
+      ScheDue <span class="material-icons">copyright</span> Made by: Rohil, Ean, and James
+    </div>
+  </footer>
 
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
 
   <!-- Link to scripts of your own -->
+  <script src="/scripts/calendar.js"></script>
   <script src="/scripts/firebaseAPI_BBY06.js"></script>
   <script src="/scripts/skeleton.js"></script>
   <script src="/scripts/script.js"></script>
-  <script src="/scripts/skeleton.js"></script>
   <script src="/scripts/main.js"></script>
-  <script src="/scripts/test-calendar.js"></script>
 
-  <!-- JS for calendar-->
-  <script src="/js/jquery-3.3.1.min.js"></script>
-  <script src="/js/popper.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+  <script src="test-calendar.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
-  <!-- Scripts for the calendar package -->
-  <script src="/fullcalendar/packages/core/main.js"></script>
-  <script src="/fullcalendar/packages/interaction/main.js"></script>
-  <script src="/fullcalendar/packages/daygrid/main.js"></script>
-  <script src="/fullcalendar/packages/bootstrap/main.js"></script>
-  <script src="/fullcalendar/packages/timegrid/main.js"></script>
-  <script src="/fullcalendar/packages/list/main.js"></script>
-  <scirpt src="/fullcalendar/packages/interaction/main.js">
+  <!-- Full calendar -->
+  <script src="fullcalendar/packages/core/main.js"></script>
+  <script src="fullcalendar/packages/interaction/main.js"></script>
+  <script src="fullcalendar/packages/daygrid/main.js"></script>
+  <script src="fullcalendar/packages/bootstrap/main.js"></script>
+  <script src="fullcalendar/packages/timegrid/main.js"></script>
+  <script src="fullcalendar/packages/list/main.js"></script>
+  <scirpt src="fullcalendar/packages/interaction/main.js">
     </script>
-    <script src="/js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
