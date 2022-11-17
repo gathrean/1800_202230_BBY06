@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* TimeGridView all-day area
 --------------------------------------------------------------------------------------------------*/
 .fc-timeGrid-view .fc-day-grid {
@@ -53,12 +54,12 @@
   border: 0 hidden transparent;
 }
 
-.fc-time-grid > .fc-bg {
+.fc-time-grid>.fc-bg {
   z-index: 1;
 }
 
 .fc-time-grid .fc-slats,
-.fc-time-grid > hr {
+.fc-time-grid>hr {
   /* the <hr> TimeGridView injects when grid is shorter than scroller */
   position: relative;
   z-index: 2;

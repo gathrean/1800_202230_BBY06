@@ -71,7 +71,7 @@
   text-align: center;
 }
 
-.fc-dayGrid-view td.fc-week-number > * {
+.fc-dayGrid-view td.fc-week-number>* {
   /* work around the way we do column resizing and ensure a minimum width */
   display: inline-block;
   min-width: 1.25em;

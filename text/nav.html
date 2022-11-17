@@ -1,4 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-primary bg-schedue-black">
+
+<!-- 
+  <nav class="navbar navbar-dark bg-dark"></nav> 
+-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-schedue-black">
   <div class="container-fluid">
     <a class="navbar-brand schedue_navbar" href="/pages/home.html">
       <img src="/images/ScheDue_text.png" height="40" />
@@ -17,18 +21,24 @@
       <div class="offcanvas-header bg-schedue-black">
 
         <h7 class="offcanvas-title" id="offcanvasNavbarLabel" href="/pages/home.html">
-          <!-- <h1><span id="name-goes-here"></span></h1> -->
+          Welcome back, <br>
+          <h5>
+            <span id="name-goes-here"></span>
+          </h5>
         </h7>
 
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </button>
 
       </div>
 
       <!-- SIDE NAVBAR BODY -->
       <div class="offcanvas-body bg-schedue-black">
-
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link" href="calendar.html">Calendar</a>
@@ -41,6 +51,17 @@
           <li class="nav-item">
             <a class="nav-link" href="profile.html">Profile</a>
           </li>
+
+
+          <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-success" type="submit">Search</button>
+          </form>
+
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-success" type="submit">Search</button>
+          </form> -->
 
         </ul>
 
