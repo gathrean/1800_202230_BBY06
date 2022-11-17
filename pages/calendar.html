@@ -10,7 +10,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <style></style>
+
+  <!-- Styles / Inner CSS -->
+  <style>
+
+  </style>
 
   <!------------------------------------------>
   <!-- Bootstrap Library CSS JS CDN go here -->
@@ -33,8 +37,11 @@
 
   <!-- Don't comment out: -->
   <link href="/fullcalendar/packages/core/main.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+<!-- 
+  This import makes the calendar be buggy. When activated, the minimized navbar can't be clicked. But when deactivated, the navbar links are gone -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- 
     Commenting the following code out because they interfere with Bootstrap's CSS. 
@@ -72,9 +79,19 @@
 
   <!-- Calendar -->
   <div class="container text-dark p-5">
-    <br>
-    <div id='calendar' class="container bg-light">
-      <!-- The whole calendar. Check out calendar.css if you want to edit. -->
+    <div class="container bg-light">
+      <br>
+      <h1>🗓 Calendar</h1>
+      <h6>Schedules, events, and due dates here.</h6>
+      <hr>
+
+      <div id='calendar'>
+        <!-- The whole calendar. Check out calendar.css if you want to edit. -->
+      </div>
+
+      <!-- Quote of the day to cheer the user -->
+      <hr>
+      <p>Quote of the day: <span id="quote-goes-here"></span></p>
     </div>
 
     <!-- <div class="row"></div>
