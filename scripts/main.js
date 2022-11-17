@@ -18,6 +18,7 @@ function insertName() {
     });
 }
 insertName(); //run the function
+insertName(); //run the function
 
 function readQuote() {
     db.collection("quotes").doc("Tuesday")                                                      //name of the collection and documents should matach excatly with what you have in Firestore
