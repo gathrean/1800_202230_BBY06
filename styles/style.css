@@ -1,21 +1,41 @@
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-  footer {
-    margin-top: auto;
-  }
+.content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
 
-  .navbar {
-    height: auto;
-  }
+/**************** ScheDue colour scheme ****************/
 
-  .bg-schedue-black {
-    background-color: #2b2a2b;
-  }
+.bg-schedue-black {
+  background-color: #2B303A;
+}
 
-  .bg-schedue-blue {
-    background: #4fbaf7;
-  }
+.bg-schedue-blue {
+  background: #4fbaf7;
+}
+
+/**************** Footer ****************/
+footer {
+  margin-top: auto;
+}
+
+.schedue_footer {
+  color: white;
+}
+
+/**************** Navbar ****************/
+.navbar {
+  height: auto;
+}
+
+.schedue_nav {
+  color: white;
+}
