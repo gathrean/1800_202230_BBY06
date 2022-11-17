@@ -41,6 +41,9 @@
 
   <!-- Link to styles of your own -->
   <link href="/styles/style.css" rel="stylesheet">
+
+  <!-- To run tasks -->
+  <link href="/run/run-tasks.css" rel="stylesheet">
 </head>
 
 <body>
@@ -51,10 +54,111 @@
   <!-- ScheDue NavBar -->
   <nav id="navbarPlaceholder"></nav>
 
+  <!-- The task manager -->
+  <br><br>
+  <div class="container text-dark p-5">
+    <div class="container bg-light">
+      <br>
+      <h1>🪴</h1>
+      <h1 class="display-4">
+        Welcome back!
+        <span id="name-goes-here"></span>
+        <br>
+      </h1>
+
+      <!-- Shows the user the summary of their day. -->
+      <h2>Here is a summary of your day:</h2>
+      <hr>
+
+      <!-- Shows the to-do list -->
+      <h6>Your tasks for today.</h6>
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="card-body">
+
+            <!-- Where user enters their new task -->
+            <form action="javascript:void(0);">
+              <input type="text" class="form-control add-task" placeholder="New Task...">
+            </form>
+
+            <!-- Sorting menu -->
+            <ul class="nav nav-pills todo-nav">
+              <li role="presentation" class="nav-item all-task active"><a href="#" class="nav-link">All</a></li>
+              <li role="presentation" class="nav-item active-task"><a href="#" class="nav-link">Active</a>
+              </li>
+              <li role="presentation" class="nav-item completed-task"><a href="#" class="nav-link">Completed</a></li>
+            </ul>
+
+            <!-- List of tasks -->
+            <div class="todo-list list-group">
+
+              <!-- First item -->
+              <div class="todo-item list-group-item">
+                <div class="checker">
+                  <span class="">
+                    <input type="checkbox">
+                  </span>
+                </div>
+                <span>Dinner with JAY-Z</span>
+                <a href="javascript:void(0);" class="float-right remove-todo-item">
+                  <i class="icon-close"></i>
+                </a>
+
+              </div>
+
+              <!-- Second item -->
+              <div class="todo-item list-group-item">
+                <div class="checker">
+                  <span class="">
+                    <input type="checkbox">
+                  </span>
+                </div>
+                <span>Study for COMP 1100 Final Exam</span>
+                <a href="javascript:void(0);" class="float-right remove-todo-item">
+                  <i class="icon-close"></i>
+                </a>
+              </div>
+
+              <!-- Third item -->
+              <div class="todo-item list-group-item">
+                <div class="checker">
+                  <span class="">
+                    <input type="checkbox">
+                  </span>
+                </div>
+                <span>Timmies time</span>
+                <a href="javascript:void(0);" class="float-right remove-todo-item">
+                  <i class="icon-close"></i>
+                </a>
+              </div>
+
+              <!-- Fourth item -->
+              <div class="todo-item list-group-item">
+                <div class="checker">
+                  <span>
+                    <input type="checkbox">
+                  </span>
+                </div>
+                <span>Contemplate life</span>
+                <a href="javascript:void(0);" class="float-right remove-todo-item">
+                  <i class="icon-close"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Body -->
-  <br><br><br>
-  <div class="container-fluid bg-light text-dark p-5" style="height:auto;">
-    <div>
+  <!-- <br><br><br>
+  <div class="container text-dark p-5">
+    <div class="container bg-light">
       <h1 class=" h1">To Do List</h1>
       <div class="row">
         <div class=" col-8">
@@ -72,7 +176,7 @@
         <ul class=" list-group" id="list"></ul>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- ScheDue footer -->
   <footer id="footerPlaceholder"></footer>
@@ -88,6 +192,9 @@
   <script src="/scripts/tasks.js"></script>
   <script src="/scripts/script.js"></script>
   <script src="/scripts/main.js"></script>
+
+  <!-- Runs the task manager -->
+  <script src="/run/run-tasks.js"></script>
 </body>
 
 </html>

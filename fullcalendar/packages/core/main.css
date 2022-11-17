@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .fc {
   direction: ltr;
   text-align: left;
@@ -243,8 +244,8 @@ temporary rendered events).
 }
 
 /* TODO: move to timegrid/daygrid */
-.fc-scroller > .fc-day-grid,
-.fc-scroller > .fc-time-grid {
+.fc-scroller>.fc-day-grid,
+.fc-scroller>.fc-time-grid {
   position: relative;
   /* re-scope all positions */
   width: 100%;
@@ -463,12 +464,12 @@ be a descendant of the grid when it is being dragged.
   padding: 0 1px;
 }
 
-tr:first-child > td > .fc-day-grid-event {
+tr:first-child>td>.fc-day-grid-event {
   margin-top: 2px;
   /* a little bit more space before the first event */
 }
 
-.fc-mirror-skeleton tr:first-child > td > .fc-day-grid-event {
+.fc-mirror-skeleton tr:first-child>td>.fc-day-grid-event {
   margin-top: 0;
   /* except for mirror skeleton */
 }
@@ -598,10 +599,11 @@ from https://feathericons.com/ and built with IcoMoon
   font-weight: normal;
   font-style: normal;
 }
+
 .fc-icon {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "fcicons" !important;
-  speak: none;
+  /* speak: none; */
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -667,9 +669,9 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-.fc-button {
+/* .fc-button {
   -webkit-appearance: button;
-}
+} */
 
 .fc-button:not(:disabled) {
   cursor: pointer;
@@ -770,33 +772,33 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   vertical-align: middle;
 }
 
-.fc-button-group > .fc-button {
+.fc-button-group>.fc-button {
   position: relative;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
-.fc-button-group > .fc-button:hover {
+.fc-button-group>.fc-button:hover {
   z-index: 1;
 }
 
-.fc-button-group > .fc-button:focus,
-.fc-button-group > .fc-button:active,
-.fc-button-group > .fc-button.fc-button-active {
+.fc-button-group>.fc-button:focus,
+.fc-button-group>.fc-button:active,
+.fc-button-group>.fc-button.fc-button-active {
   z-index: 1;
 }
 
-.fc-button-group > .fc-button:not(:first-child) {
+.fc-button-group>.fc-button:not(:first-child) {
   margin-left: -1px;
 }
 
-.fc-button-group > .fc-button:not(:last-child) {
+.fc-button-group>.fc-button:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.fc-button-group > .fc-button:not(:first-child) {
+.fc-button-group>.fc-button:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -831,7 +833,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 }
 
 /* inner content */
-.fc-toolbar > * > :not(:first-child) {
+.fc-toolbar>*> :not(:first-child) {
   margin-left: 0.75em;
 }
 
@@ -857,7 +859,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 }
 
 .fc-view,
-.fc-view > table {
+.fc-view>table {
   /* so dragged elements can be above the view's main element */
   position: relative;
   z-index: 1;
@@ -883,11 +885,11 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   /* Table & Day-Row Restyling
   --------------------------------------------------------------------------------------------------*/
   .fc th,
-.fc td,
-.fc hr,
-.fc thead,
-.fc tbody,
-.fc-row {
+  .fc td,
+  .fc hr,
+  .fc thead,
+  .fc tbody,
+  .fc-row {
     border-color: #ccc !important;
     background: #fff !important;
   }
@@ -895,13 +897,13 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   /* kill the overlaid, absolutely-positioned components */
   /* common... */
   .fc-bg,
-.fc-bgevent-skeleton,
-.fc-highlight-skeleton,
-.fc-mirror-skeleton,
-.fc-bgevent-container,
-.fc-business-container,
-.fc-highlight-container,
-.fc-mirror-container {
+  .fc-bgevent-skeleton,
+  .fc-highlight-skeleton,
+  .fc-mirror-skeleton,
+  .fc-bgevent-container,
+  .fc-business-container,
+  .fc-highlight-container,
+  .fc-mirror-container {
     display: none;
   }
 
@@ -935,7 +937,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   /* Undo month-view event limiting. Display all events and hide the "more" links
   --------------------------------------------------------------------------------------------------*/
   .fc-more-cell,
-.fc-more {
+  .fc-more {
     display: none !important;
   }
 
@@ -966,7 +968,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 
   /* don't display the horizontal lines */
   .fc-slats,
-.fc-time-grid hr {
+  .fc-time-grid hr {
     /* this hr is used when height is underused and needs to be filled */
     display: none !important;
     /* important overrides inline declaration */
@@ -1035,8 +1037,8 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   --------------------------------------------------------------------------------------------------*/
   /* kill the scrollbars and allow natural height */
   .fc-scroller,
-.fc-day-grid-container,
-.fc-time-grid-container {
+  .fc-day-grid-container,
+  .fc-time-grid-container {
     /* */
     overflow: visible !important;
     height: auto !important;
@@ -1051,7 +1053,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   /* Button Controls
   --------------------------------------------------------------------------------------------------*/
   .fc-button-group,
-.fc button {
+  .fc button {
     display: none;
     /* don't display any button-related controls */
   }

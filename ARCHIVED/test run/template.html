@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App">
+
+    <!------------------------>
+    <!-- Required meta tags -->
+    <!------------------------>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!------------------------------------------>
+    <!-- Bootstrap Library CSS JS CDN go here -->
+    <!------------------------------------------>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+    <!-------------------------------------------->
+    <!-- Other libraries and styles of your own -->
+    <!-------------------------------------------->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="/run/run-tasks.css">
+</head>
+
+<body>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
+
+    <!-- our own navbar goes here -->
+    <nav id="navbarPlaceholder"></nav>
+
+    <!-- the body of your page goes here -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-white">
+                    <div class="card-body">
+                        <form action="javascript:void(0);">
+                            <input type="text" class="form-control add-task" placeholder="New Task...">
+                        </form>
+                        <ul class="nav nav-pills todo-nav">
+                            <li role="presentation" class="nav-item all-task active"><a href="#"
+                                    class="nav-link">All</a></li>
+                            <li role="presentation" class="nav-item active-task"><a href="#" class="nav-link">Active</a>
+                            </li>
+                            <li role="presentation" class="nav-item completed-task"><a href="#"
+                                    class="nav-link">Completed</a></li>
+                        </ul>
+                        <div class="todo-list">
+                            <div class="todo-item">
+                                <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                <span>Dinner with JAY-Z</span>
+                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i
+                                        class="icon-close"></i></a>
+                            </div>
+                            <div class="todo-item">
+                                <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                <span>Study for COMP 1100 Final Exam</span>
+                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i
+                                        class="icon-close"></i></a>
+                            </div>
+
+                            <div class="todo-item">
+                                <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                <span>Timmies time</span>
+                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i
+                                        class="icon-close"></i></a>
+                            </div>
+                            <div class="todo-item">
+                                <div class="checker"><span><input type="checkbox"></span></div>
+                                <span>Contemplate life</span>
+                                <a href="javascript:void(0);" class="float-right remove-todo-item"><i
+                                        class="icon-close"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- our own footer goes here-->
+    <nav id="footerPlaceholder"></nav>
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+    <script src="./scripts/firebaseAPI_TEAM99.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="/run/run-tasks.js"></script>
+
+</body>
+
+</html>
