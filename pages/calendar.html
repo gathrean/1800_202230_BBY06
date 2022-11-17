@@ -10,9 +10,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Hamburger menu icon -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <style></style>
 
   <!------------------------------------------>
@@ -34,15 +31,20 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
-  <!-- Other libraries go here -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-  <!-- Handles the theme of the calendar. Don't touch this. -->
+  <!-- Don't comment out: -->
   <link href="/fullcalendar/packages/core/main.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
+  <!-- 
+    Commenting the following code out because they interfere with Bootstrap's CSS. 
+    When activated, the whole webpage looks really weird. But I [Ean] will
+    still keep this here for future reference. 
+  -->
+  <!-- <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" /> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+
+  <!-- Full calendar package. -->
   <link href="/fullcalendar/packages/daygrid/main.css" rel="stylesheet" />
   <link href="/fullcalendar/packages/bootstrap/main.css" rel="stylesheet" />
   <link href="/fullcalendar/packages/timegrid/main.css" rel="stylesheet" />
@@ -67,11 +69,18 @@
 
   <!-- Body -->
   <br><br>
+
+  <!-- Calendar -->
   <div class="container my-auto">
+
+    <!-- The whole calendar. Check out calendar.css if you want to edit. -->
     <div id='calendar'></div>
-    <div class="row"></div>
-    <div class="col-mid-3"></div>
-    <div class="container-event card card-body">
+
+    <!-- <div class="row"></div>
+    <div class="col-mid-3"></div> -->
+
+    <!-- Draggable Events (Currently doesn't work lol) -->
+    <!-- <div class="container-event card card-body">
       <h6>Draggable Events</h6>
       <div id="events">
         <div class="fc-event">Event #1</div>
@@ -87,7 +96,7 @@
         <input type="text" id="input-event" class="form-control">
         <button type="button" id="add-event" class="btn btn-primary mt-2">Add Event</button>
       </p>
-    </div>
+    </div> -->
   </div>
 
   <!-- ScheDue footer -->

@@ -196,7 +196,7 @@ h5 {
 #table-body .col:hover {
    cursor: pointer;
    /*border: 1px solid grey;*/
-   background-color: #E0E0E0;
+   background-color: #888888;
 }
 
 .empty-day:hover {

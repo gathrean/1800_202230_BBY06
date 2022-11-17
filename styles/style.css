@@ -37,6 +37,8 @@ p {
 /**************** Footer ****************/
 footer {
   margin-top: auto;
+  height: fit-content;
+  font-size: medium;
 }
 
 .schedue_footer {
