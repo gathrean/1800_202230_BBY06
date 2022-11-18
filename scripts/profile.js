@@ -51,7 +51,7 @@ function saveUserInfo() {
   userName = document.getElementById("nameInput").value; //get the value of the field with id="nameInput"
   userSchool = document.getElementById("schoolInput").value; //get the value of the field with id="schoolInput"
   userWork = document.getElementById("workInput").value; //get the value of the field with id="workInput"
-  userDescription = document.getElementById("description").value;
+  userDescription = document.getElementById("description").value; //get the value of the field with the id="description"
 
   currentUser
     .update({
