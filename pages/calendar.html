@@ -39,7 +39,7 @@
   <link href="/fullcalendar/packages/core/main.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-<!-- 
+  <!-- 
   This import makes the calendar be buggy. When activated, the minimized navbar can't be clicked. But when deactivated, the navbar links are gone -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -87,6 +87,54 @@
 
       <div id='calendar'>
         <!-- The whole calendar. Check out calendar.css if you want to edit. -->
+      </div>
+
+      <!-- Button to add or remove an event -->
+      <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Add/Remove Event
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add or Remove an Event</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Details inside of the button -->
+            
+              <div class="modal-body">
+
+                <div class="form-group">
+                  <label for="">Enter Name</label>
+                  <input type="text" class="form-control" name="title" placeholder="">
+                </div>
+
+                <div class="form-group">
+                  <label for="">Choose Colour</label>
+                  <input type="color" class="form-control" name="color">
+                </div>
+
+                <div class="form-group">
+                  <label for="">Start Date</label>
+                  <input type="datetime-local" class="form-control" name="start_date" placeholder="Enter start date">
+                </div>
+
+                <div class="form-group">
+                  <label for="">End Date</label>
+                  <input type="datetime-local" class="form-control" name="end_date" placeholder="Enter end date">
+                </div>
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+            
+          </div>
+        </div>
       </div>
 
       <!-- Quote of the day to cheer the user -->
