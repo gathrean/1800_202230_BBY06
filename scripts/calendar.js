@@ -1,11 +1,11 @@
 var currentUserEvents
 
 function populateEventInfo() {
-  firebase.auth().onAuthStateChanged(user => {
+  firebase.auth().onAuthStateChanged(users => {
     
-    if (user) {
+    if (users) {
       // Go to correct event document by referencing the events uid
-      currentUserEvents = db.collection("users").doc(user.uid).collection("events").doc(events.uid);
+      currentUserEvents = db.collection('users').doc(users.uid).collection('events').doc(events.uid);
       // Get the doc from the current user
       currentUserEvents.get().then(eventsDoc => {
 
@@ -17,17 +17,37 @@ function populateEventInfo() {
 
         // If data fields are not empty, put each value into the variable
         if (eventName != null) {
-          document.getElementById("event-name").value = eventName;
-          document.getElementById("event-colour").value = eventColour;
-          document.getElementById("event-start").value = eventStart;
-          document.getElementById("event-end").value = eventEnd;
+          document.getElementById('event-name').value = eventName;
+          document.getElementById('event-colour').value = eventColour;
+          document.getElementById('event-start').value = eventStart;
+          document.getElementById('event-end').value = eventEnd;
         }
       })
     }
   });
 }
 
+// Runs function populateEventInfo()
 populateEventInfo();
+
+
+function saveEventInfo() {
+
+  eventName = document.getElementById('event-name').value;
+  eventColour = document.getElementById('event-colour').value;
+  eventStart = document.getElementById('event-start').value;
+  eventEnd = document.getElementById('event-end').value;
+
+  currentUserEvents.update({
+    Event: eventName,
+    Start: eventStart,
+    End: eventEnd,
+  })
+  .then(() => {
+    console.log("Document successfully updated!");
+  })
+
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   var calendarObj = document.getElementById('calendar');
