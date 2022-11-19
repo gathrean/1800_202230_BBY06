@@ -1,3 +1,34 @@
+var currentUserEvents
+
+function populateEventInfo() {
+  firebase.auth().onAuthStateChanged(user => {
+    
+    if (user) {
+      // Go to correct event document by referencing the events uid
+      currentUserEvents = db.collection("users").doc(user.uid).collection("events").doc(events.uid);
+      // Get the doc from the current user
+      currentUserEvents.get().then(eventsDoc => {
+
+        // Declare variables for events collection
+        var eventName = eventsDoc.data().name;
+        var eventColour = eventsDoc.data().colour;
+        var eventStart = eventsDoc.data().startDate;
+        var eventEnd = eventsDoc.data().endDate;
+
+        // If data fields are not empty, put each value into the variable
+        if (eventName != null) {
+          document.getElementById("event-name").value = eventName;
+          document.getElementById("event-colour").value = eventColour;
+          document.getElementById("event-start").value = eventStart;
+          document.getElementById("event-end").value = eventEnd;
+        }
+      })
+    }
+  });
+}
+
+populateEventInfo();
+
 document.addEventListener('DOMContentLoaded', function () {
   var calendarObj = document.getElementById('calendar');
 
@@ -65,6 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   calendar.render();
 });
+
+
 
 var events = document.getElementById('events');
 var checkbox = document.getElementById('move-event');
