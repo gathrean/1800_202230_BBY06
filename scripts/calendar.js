@@ -1,52 +1,30 @@
-var currentUserEvents
+var calendarEventsRef
 
-function populateEventInfo() {
-  firebase.auth().onAuthStateChanged(users => {
-    
-    if (users) {
-      // Go to correct event document by referencing the events uid
-      currentUserEvents = db.collection('users').doc(users.uid).collection('events').doc(events.uid);
-      // Get the doc from the current user
-      currentUserEvents.get().then(eventsDoc => {
+function saveEventInfo() {
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      firebase.auth().onAuthStateChanged(event => {
+        if (event) {
+          currentEventsRef = db.collection('users').doc(user.uid).collection('events').doc(event.uid)
 
-        // Declare variables for events collection
-        var eventName = eventsDoc.data().name;
-        var eventColour = eventsDoc.data().colour;
-        var eventStart = eventsDoc.data().startDate;
-        var eventEnd = eventsDoc.data().endDate;
+          var eventName = document.getElementById('event-name').value;
+          var eventColour = document.getElementById('event-colour').value;
+          var eventStart = document.getElementById('event-start').value;
+          var eventEnd = document.getElementById('event-end').value;
 
-        // If data fields are not empty, put each value into the variable
-        if (eventName != null) {
-          document.getElementById('event-name').value = eventName;
-          document.getElementById('event-colour').value = eventColour;
-          document.getElementById('event-start').value = eventStart;
-          document.getElementById('event-end').value = eventEnd;
+          currentEventsRef.set({
+            Event: eventName,
+            Colour: eventColour,
+            Start: eventStart,
+            End: eventEnd,
+          })
+            .then(() => {
+              console.log("Document successfully updated!");
+            })
         }
       })
     }
-  });
-}
-
-// Runs function populateEventInfo()
-populateEventInfo();
-
-
-function saveEventInfo() {
-
-  eventName = document.getElementById('event-name').value;
-  eventColour = document.getElementById('event-colour').value;
-  eventStart = document.getElementById('event-start').value;
-  eventEnd = document.getElementById('event-end').value;
-
-  currentUserEvents.update({
-    Event: eventName,
-    Start: eventStart,
-    End: eventEnd,
   })
-  .then(() => {
-    console.log("Document successfully updated!");
-  })
-
 }
 
 document.addEventListener('DOMContentLoaded', function () {
