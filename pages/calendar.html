@@ -85,21 +85,21 @@
       <h6>Schedules, events, and due dates here.</h6>
       <hr>
 
-      <div id='calendar'>
-        <!-- The whole calendar. Check out calendar.css if you want to edit. -->
-      </div>
+      <!-- The whole calendar. Check out calendar.css if you want to edit. -->
+      <div id='calendar'></div>
 
       <!-- Button to add or remove an event -->
       <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Add/Remove Event
+        Add Event
       </button>
 
       <!-- Modal -->
+      <form>
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add or Remove an Event</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Add an Event</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <!-- Details inside of the button -->
@@ -108,35 +108,35 @@
 
                 <div class="form-group">
                   <label for="">Enter Name</label>
-                  <input type="text" class="form-control" name="title" placeholder="">
+                  <input type="text" class="form-control" id="event-name" name="title" placeholder="">
                 </div>
 
                 <div class="form-group">
                   <label for="">Choose Colour</label>
-                  <input type="color" class="form-control" name="color">
+                  <input type="color" class="form-control" id="event-colour" name="color">
                 </div>
 
                 <div class="form-group">
                   <label for="">Start Date</label>
-                  <input type="datetime-local" class="form-control" name="start_date" placeholder="Enter start date">
+                  <input type="datetime-local" class="form-control" id="event-start" name="start_date" placeholder="Enter start date">
                 </div>
 
                 <div class="form-group">
                   <label for="">End Date</label>
-                  <input type="datetime-local" class="form-control" name="end_date" placeholder="Enter end date">
+                  <input type="datetime-local" class="form-control" id="event-end" name="end_date" placeholder="Enter end date">
                 </div>
 
 
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
               </div>
             
           </div>
         </div>
       </div>
-
+      </form>
       <!-- Quote of the day to cheer the user -->
       <hr>
       <p>Quote of the day: <span id="quote-goes-here"></span></p>
