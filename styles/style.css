@@ -123,3 +123,6 @@ a:hover {
   margin: 5px 0;
   cursor: move;
 }
+
+#text {
+  font-family: 'B612', sans-serif;}
