@@ -41,7 +41,8 @@
 
   <!-- 
   This import makes the calendar be buggy. When activated, the minimized navbar can't be clicked. But when deactivated, the navbar links are gone -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="/styles/bootstrap1.css" rel="stylesheet">
 
   <!-- 
     Commenting the following code out because they interfere with Bootstrap's CSS. 
@@ -87,7 +88,7 @@
 
       <!-- The whole calendar. Check out calendar.css if you want to edit. -->
       <!-- <div id='calendar'></div> -->
-      
+
       <!-- Comment this and uncomment 'calendar' if you want to go back to the thinner calendar -->
       <div id="calendar2"></div>
 
@@ -153,12 +154,14 @@
 
                 <div class="form-group">
                   <label for="">Start Date</label>
-                  <input type="datetime-local" class="form-control" id="event-start" name="start_date" placeholder="YYYY-MM-DD">
+                  <input type="datetime-local" class="form-control" id="event-start" name="start_date"
+                    placeholder="YYYY-MM-DD">
                 </div>
 
                 <div class="form-group">
                   <label for="">End Date</label>
-                  <input type="datetime-local" class="form-control" id="event-end" name="end_date" placeholder="YYYY-MM-DD">
+                  <input type="datetime-local" class="form-control" id="event-end" name="end_date"
+                    placeholder="YYYY-MM-DD">
                 </div>
 
 
@@ -176,7 +179,7 @@
       <p>Quote of the day: <span id="quote-goes-here"></span></p>
     </div>
   </div>
-  
+
 
   <!-- ScheDue footer -->
   <footer id="footerPlaceholder"></footer>

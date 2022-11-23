@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>BBY06 - ScheDue</title>
-    <meta name="comp1800 template" content="My 1800 App" />
-    <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
-  
+    <meta name="comp1800 template" content="My 1800 App">
+    <link href="/images/favicon.ico" rel="icon" type="image/x-icon">
+
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Hamburger menu icon -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+
     <!-- Styles / Inner CSS -->
-    <style>
-  
-    </style>
-  
+    <style></style>
+
     <!------------------------------------------>
     <!-- Bootstrap Library CSS JS CDN go here -->
     <!------------------------------------------>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-      </script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js">
-    </script>
-  
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
     <!-------------------------------------------------------->
@@ -38,16 +42,22 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-  
-    <!-- Other libraries go here -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  
-    <!-- Link to styles of your own -->
-    <link href="/styles/style.css" rel="stylesheet">
-</head>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    >
 
-<body>
+    <!-- Other libraries go here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=B612:ital@1&display=swap" rel="stylesheet">
+
+    <!-- Link to styles of your own -->
+    <link href="/styles/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
@@ -58,18 +68,36 @@
     <!-- Body -->
     <br><br>
     <div class="container text-dark p-5">
-        <div class="container bg-light">
-            <br>
-            <h1>📖 About ScheDue</h1>
-            <h6>Yo someone else fill this up LMAO</h6>
-            <hr>
-            
-            <br><br><br><br><br><br><br><br><br>
-            <!-- Quote of the day to cheer the user -->
-            <hr>
-            <p>Quote of the day: <span id="quote-goes-here"></span></p>
-
+      <div class="container bg-light">
+        <br>
+        <h1>📖 About ScheDue</h1>
+        <hr>
+        <div id="text">
+          <p>
+            Founded in 2022 by Rohil Patel, James Langile, and Ean Dela Cruz.
+          </p>
+          <p>
+            Hi! We're students at BCIT under the CST Diploma program. We know
+            very well how busy our lives can get sometimes. Taking 7 courses
+            in our first term gave us the idea to create a scheduling app that
+            will help manage our time. We also thought of those who aren't
+            just students, but people that work part-time or full-time. It's
+            important for us to be able to enjoy life, but it's not always so
+            easy to make that time.
+          </p>
+          <p>
+            The Schedue app is a mobile friendly web application that helps our
+            user find time to make time. We wanted to create a solution for busy
+            students or workers to manage their time, because we know that life
+            can get hectic quickly. The app allows for students and workers to 
+            update their calanders with upcomming events that gets converted
+            into their personal to-do list.
+          </p>
+          <br>
+          <hr>
+          <br>
         </div>
+      </div>
     </div>
 
     <!-- ScheDue footer -->
@@ -85,6 +113,5 @@
     <script src="/scripts/skeleton.js"></script>
     <script src="/scripts/script.js"></script>
     <script src="/scripts/main.js"></script>
-</body>
-
+  </body>
 </html>
