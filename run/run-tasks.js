@@ -107,7 +107,7 @@ function populateEventInfo() {
         // Check if user is signed in:
         if (user) {
             //go to the correct user document by referencing to the user uid
-            currentUser = db.collection("users").doc(user.uid).collection("schoolCalendar");
+            currentUser = db.collection("users").doc(user.uid).collection("schoolCalendar").doc(id);
             //get the document for current user.
             currentUser.get().then((userDoc) => {
                 //get the data fields of the user
@@ -115,20 +115,19 @@ function populateEventInfo() {
                 var eventName = userDoc.data().event;
                 var eventStart = userDoc.data().start;
                 var eventEnd = userDoc.data().event;
-                var userDescription = userDoc.data().description;
 
                 //if the data fields are not empty, then write them in to the form.
-                if (eventColour != null) {
-                    document.getElementById("eventColourInput").value = eventColour;
-                }
                 if (eventName != null) {
-                    document.getElementById("eventNameInput").value = eventName;
+                    document.getElementById("event-name").value = eventName;
+                }
+                if (eventColour != null) {
+                    document.getElementById("event-colour").value = eventColour;
                 }
                 if (eventStart != null) {
-                    document.getElementById("eventStartInput").value = eventStart;
+                    document.getElementById("event-start").value = eventStart;
                 }
                 if (eventEnd != null) {
-                    document.getElementById("eventEndInput").value = eventEnd;
+                    document.getElementById("event-end").value = eventEnd;
                 }
             });
         } else {
