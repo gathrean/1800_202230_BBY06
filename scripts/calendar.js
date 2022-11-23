@@ -24,80 +24,29 @@ function addEventInfo() {
     }
   });
 }
-
+var nameEvent
+var startEvent
+var endEvent
 // Gets the event info and throws it onto the calendar somehow
 function getEventInfo() {
 
+  db.collection("schoolCalendar").get()
+    .then(allEvents => {
+      allEvents.forEach(doc => {
+        nameEvent = doc.data().event;
+        startEvent = doc.data().start;
+        endEvent = doc.data().end;
+
+        calendar.addEvent({
+          title: nameEvent,
+          start: startEvent,
+          end: endEvent
+        })
+      })
+    })
 }
-// First calendar made
-document.addEventListener('DOMContentLoaded', function () {
-  var calendarObj = document.getElementById('calendar');
 
-  var calendar = new FullCalendar.Calendar(calendarObj, {
-
-    plugins: ['interaction', 'dayGrid', 'timeGrid', 'list', 'bootstrap',],
-    weekNumbers: true,
-    timeZone: 'PST',
-    editable: true,
-    eventLimit: true,
-    selectable: true,
-    eventClick: function (info) {
-      info.jsEvent.preventDefault();
-
-      if (info.event.url) {
-        window.open(info.event.url);
-      } else {
-        Swal.fire(info.event.title, 'Start: ' + info.event.start, 'question');
-      }
-    },
-    droppable: true,
-    drop: function (info) {
-      if (checkbox.checked) {
-        info.draggedEl.parentNode.removeChild(info.draggedEl);
-      }
-    },
-
-    header: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth, timeGridWeek, timeGridDay',
-    },
-
-    footer: {
-
-    },
-
-    events: [
-      {
-        title: 'TEST',
-        start: '2022-11-28',
-        end: '2022-11-30'
-      },
-      {
-        title: 'Long Event',
-        start: '2020-02-07',
-        end: '2020-02-10',
-      },
-      {
-        groupId: 999,
-        title: 'Repeating Event',
-        start: '2022-02-09T16:00:00'
-      },
-      {
-        groupId: 999,
-        title: 'Repeating Event',
-        start: '2020-02-16T16:00:00'
-      },
-      {
-        title: 'Click for Google',
-        url: 'http://google.com/',
-        start: '2022-11-29'
-      }
-    ]
-  });
-
-  calendar.render();
-});
+getEventInfo()
 
 // Second calendar for when the carousel works properly
 document.addEventListener('DOMContentLoaded', function () {
@@ -127,6 +76,24 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     },
 
+    customButtons: {
+      addEventButton: {
+        text: 'Add Event',
+        click: function() {
+          var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+          var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+
+          if (!isNaN(date.valueOf())) { // valid?
+            calendar.addEvent({
+              title: 'dynamic event',
+              start: date,
+              allDay: true
+            });
+      }
+    }
+    }
+  },
+
     header: {
       left: 'prev,next today',
       center: 'title',
@@ -134,14 +101,14 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     footer: {
-
+      center: 'addEventButton'
     },
 
     events: [
       {
         title: 'TEST',
-        start: '2022-11-28',
-        end: '2022-11-30'
+        start: '2022-11-11',
+        end: '2022-11-12'
       },
       {
         title: 'Long Event',
@@ -236,4 +203,74 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   
   workCalendar.render();
+});
+
+// First calendar made
+document.addEventListener('DOMContentLoaded', function () {
+  var calendarObj = document.getElementById('calendar');
+
+  var calendar = new FullCalendar.Calendar(calendarObj, {
+
+    plugins: ['interaction', 'dayGrid', 'timeGrid', 'list', 'bootstrap',],
+    weekNumbers: true,
+    timeZone: 'PST',
+    editable: true,
+    eventLimit: true,
+    selectable: true,
+    eventClick: function (info) {
+      info.jsEvent.preventDefault();
+
+      if (info.event.url) {
+        window.open(info.event.url);
+      } else {
+        Swal.fire(info.event.title, 'Start: ' + info.event.start, 'question');
+      }
+    },
+    droppable: true,
+    drop: function (info) {
+      if (checkbox.checked) {
+        info.draggedEl.parentNode.removeChild(info.draggedEl);
+      }
+    },
+
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth, timeGridWeek, timeGridDay',
+    },
+
+    footer: {
+
+    },
+
+    events: [
+      {
+        title: 'TEST',
+        start: '2022-11-28',
+        end: '2022-11-30'
+      },
+      {
+        title: 'Long Event',
+        start: '2020-02-07',
+        end: '2020-02-10',
+      },
+      {
+        groupId: 999,
+        title: 'Repeating Event',
+        start: '2022-02-09T16:00:00'
+      },
+      {
+        groupId: 999,
+        title: 'Repeating Event',
+        start: '2020-02-16T16:00:00'
+      },
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2022-11-29'
+      }
+    ]
+  });
+
+  calendar.render();
 });
