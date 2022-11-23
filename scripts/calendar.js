@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (info.event.url) {
         window.open(info.event.url);
       } else {
-        SVGFEDropShadowElement.fire(info.event.title, 'Start: ' + info.event.start, 'question');
+        Swal.fire(info.event.title, 'Start: ' + info.event.start, 'question');
       }
     },
     droppable: true,
