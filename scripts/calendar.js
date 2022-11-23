@@ -1,3 +1,4 @@
+// FOR CALENDAR MAKING EVENTS
 function addEventInfo() {
   console.log("Add event info");
 
