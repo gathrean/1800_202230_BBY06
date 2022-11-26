@@ -7,7 +7,8 @@ addList = () => {
     let inputText = filterList(input.value);
     // set 
     if (inputText) {
-        list.innerHTML += ` <li class=" my-3 py-3 shadow list-group-item " id="list${listNum}">
+        list.innerHTML += ` 
+                <li class=" my-3 py-3 shadow list-group-item " id="list${listNum}">
                 <div class="row">
                 <div class="col-1">
                 <input class="" type="checkbox" id="check${listNum}" onclick="done(${listNum})">
