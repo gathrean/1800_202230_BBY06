@@ -1,52 +1,57 @@
 // FOR CALENDAR MAKING EVENTS
-function addEventInfo() {
-  console.log("Add event info");
+// function addEventInfo() {
+//   console.log("Add event info");
 
-  let eventName = document.getElementById('event-name').value;
-  let eventColour = document.getElementById('event-colour').value;
-  let eventStart = document.getElementById('event-start').value;
-  let eventEnd = document.getElementById('event-end').value;
-  console.log(eventName, eventColour, eventStart, eventEnd);
+//   let eventName = document.getElementById('event-name').value;
+//   let eventColour = document.getElementById('event-colour').value;
+//   let eventStart = document.getElementById('event-start').value;
+//   let eventEnd = document.getElementById('event-end').value;
+//   console.log(eventName, eventColour, eventStart, eventEnd);
 
-  firebase.auth().onAuthStateChanged(user => {
-    if (user) {
+//   firebase.auth().onAuthStateChanged(user => {
+//     if (user) {
 
-      db.collection("users").doc(user.uid).collection("schoolCalendar").add({
-        event: eventName,
-        colour: eventColour,
-        start: eventStart,
-        end: eventEnd
-      }).then((doc) => {
-        console.log(doc.id);
-        window.location.href = "/pages/calendar.html";
-      })
-    } else {
-      console.log("No user signed in");
-    }
-  });
-}
-var nameEvent
-var startEvent
-var endEvent
-// Gets the event info and throws it onto the calendar somehow
-function getEventInfo() {
+//       db.collection("users").doc(user.uid).collection("schoolCalendar").add({
+//         event: eventName,
+//         colour: eventColour,
+//         start: eventStart,
+//         end: eventEnd
+//       }).then((doc) => {
+//         console.log(doc.id);
+//         window.location.href = "/pages/calendar.html";
+//       })
+//     } else {
+//       console.log("No user signed in");
+//     }
+//   });
+// }
 
-  db.collection("schoolCalendar").get()
-    .then(allEvents => {
-      allEvents.forEach(doc => {
-        nameEvent = doc.data().event;
-        startEvent = doc.data().start;
-        endEvent = doc.data().end;
-
-        calendar.addEvent({
-          title: nameEvent,
-          start: startEvent,
-          end: endEvent
-        });
-        console.log(nameEvent, startEvent, endEvent);
-      })
-    })
-}
+// Global variables (instance data)
+var eventName
+var dateStart
+var dateE
+// Add event from the school calendar to user's subcollection
+function addSchoolEvent() {
+    console.log("Add event info");
+    // Changes directory to user
+    firebase.auth().onAuthStateChanged(user => {
+      // If user is signed in, get schoolCalendar subcollection
+      if (user) {
+        // Add a new schoolCalendar doc
+        db.collection("users").doc(user.uid).collection("schoolCalendar").add({
+          event: eventName,
+          start: dateStart,
+          end: dateE
+        }).then((doc) => {
+          // Print doc id in browser console and ideally refresh page to update calendar
+          console.log(doc.id);
+        //   window.location.href = "/pages/calendar.html"; will uncomment this once info is read from database and displayed on calendar
+        })
+      } else {
+        console.log("No user signed in");
+      }
+    });
+  }
 // Creates the school calendar
 document.addEventListener('DOMContentLoaded', function () {
   // Gets id='schoolCalendar'
@@ -61,27 +66,32 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       // Adds buttons to the footer
       footerToolbar: {
-        left: 'addEventButton' 
+        center: 'addEventButton' 
       },
       // Code needed to create the add event button
       customButtons: {
           addEventButton: {
               // Title of button
               text: 'Add Event',
+              // Asks user for event name, start and end date
               click: function () {
+                  var event = prompt('Enter the event Name');
+                  eventName = event;
                   var dateStr = prompt('Enter the start date in YYYY-MM-DD format');
-                  var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+                  dateStart = new Date(dateStr + 'T00:00:00'); // will be in local time
                   var dateEnd = prompt('Enter the end date in YYYY-MM-DD format');
-                  var dateE = new Date(dateEnd + 'T00:00:00'); // will be in local time
+                  dateE = new Date(dateEnd + 'T00:00:00'); // will be in local time
 
-                  if (!isNaN(date.valueOf())) { // valid?
+                  if (!isNaN(dateStart.valueOf())) { // valid?
                     // Adds the event to the calendar
                       schoolCalendar.addEvent({
-                          title: 'dynamic event',
-                          start: date,
+                          title: eventName,
+                          start: dateStart,
                           end: dateE,
                           allDay: true
                       });
+                      // Calls function above
+                      addSchoolEvent();
                   }
               }
           }
