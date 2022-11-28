@@ -37,8 +37,9 @@
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
   <!-- Other libraries go here -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
   <!-- Link to styles of your own -->
   <link href="/styles/style.css" rel="stylesheet">
 </head>
@@ -56,10 +57,10 @@
   <div class="container text-dark p-5">
     <div class="container bg-light">
       <br>
-      <h1>😁 Profile</h1>
+      <h1>😄 Update User Info</h1>
       <h6>Edit your information.</h6>
       <hr>
-      <h1>Update User Info</h1>
+      <!-- <h1>Update User Info</h1> -->
       <br>
       <form>
         <fieldset class="mb-3" id="personalInfoFields" disabled>
@@ -68,6 +69,7 @@
             <input type="text" class="form-control" id="nameInput" placeholder="Name">
           </div>
           <br>
+          <br>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Are you in school?</label>
             <select class="form-control" id="schoolInput">
@@ -75,30 +77,44 @@
               <option value="Part-Time">Part-Time</option>
               <option value="N/A">N/A</option>
             </select>
-          </div>d
-          <br>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Are you working?</label>
-            <select class="form-control" id="workInput">
-              <option value="Full-Time">Full-Time</option>
-              <option value="Part-Time">Part-Time</option>
-              <option value="N/A">N/A</option>
-            </select>
-          </div>
-          <br>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">How are you currently feeling about your work-life
-              balance?</label>
-            <select class="form-control" id="description">
-              <option value="Amazing">Amazing</option>
-              <option value="Great">Great</option>
-              <option value="Decent">Decent</option>
-              <option value="Neutral">Neutral</option>
-              <option value="Not The Best">Not The Best</option>
-              <option value="Stressed">Stressed</option>
-              <option value="Struggling">Struggling</option>
-            </select>
-          </div>
+            <br>
+            <div class="form-group" id="textfieldSchool">
+              <label for="exampleFormControlInput1">What school do you go to?</label>
+              <input type="text" class="form-control" id="typetextfield" placeholder="Type here:">
+              <br>
+              <label for="exampleFormControlInput1">What program are you enrolled in?</label>
+              <input type="text" class="form-control" id="typetextfield" placeholder="Type here:">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Are you working?</label>
+              <select class="form-control" id="workInput">
+                <option value="Full-Time">Full-Time</option>
+                <option value="Part-Time">Part-Time</option>
+                <option value="N/A">N/A</option>
+              </select>
+            </div>
+              <br>
+              <div class="form-group" id="textfieldWork">
+                <label for="exampleFormControlInput1">Where do you work?</label>
+                <input type="text" class="form-control" id="typetextfieldWork" placeholder="Type here:">
+              </div>
+                <br>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">How are you currently feeling about your work-life
+                  balance?</label>
+                <select class="form-control" id="description">
+                  <option value="Amazing">Amazing</option>
+                  <option value="Great">Great</option>
+                  <option value="Decent">Decent</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Not The Best">Not The Best</option>
+                  <option value="Stressed">Stressed</option>
+                  <option value="Struggling">Struggling</option>
+                </select>
+              </div>
+              <br>
+
         </fieldset>
         <br>
         <div class="d-flex justify-content-end mt-5">
@@ -107,10 +123,7 @@
           <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
         </div>
       </form>
-
-      <!-- Quote of the day to cheer the user -->
-      <hr>
-      <p>Quote of the day: <span id="quote-goes-here"></span></p>
+      <br>
     </div>
 
   </div>

@@ -1,117 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>BBY06 - ScheDue</title>
-    <meta name="comp1800 template" content="My 1800 App">
-    <link href="/images/favicon.ico" rel="icon" type="image/x-icon">
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <title>BBY06 - ScheDue</title>
+  <meta name="comp1800 template" content="My 1800 App">
+  <link href="/images/favicon.ico" rel="icon" type="image/x-icon">
 
-    <!-- Hamburger menu icon -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    >
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Styles / Inner CSS -->
-    <style></style>
+  <!-- Hamburger menu icon -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!------------------------------------------>
-    <!-- Bootstrap Library CSS JS CDN go here -->
-    <!------------------------------------------>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!-- Styles / Inner CSS -->
+  <style></style>
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
-    >
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-    <!-- Other libraries go here -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=B612:ital@1&display=swap" rel="stylesheet">
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css">
 
-    <!-- Link to styles of your own -->
-    <link href="/styles/style.css" rel="stylesheet" />
-  </head>
+  <!-- Other libraries go here -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
 
-  <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+  <!-- Link to styles of your own -->
+  <link href="/styles/style.css" rel="stylesheet" />
+</head>
 
-    <!-- ScheDue NavBar -->
-    <nav id="navbarPlaceholder"></nav>
+<body>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
 
-    <!-- Body -->
-    <br><br>
-    <div class="container text-dark p-5">
-      <div class="container bg-light">
+  <!-- ScheDue NavBar -->
+  <nav id="navbarPlaceholder"></nav>
+
+  <!-- Body -->
+  <br><br>
+  <div class="container text-dark p-5">
+    <div class="container bg-light">
+      <br>
+      <h1>📖 About ScheDue</h1>
+      <hr>
+      <div id="text">
+        <p>
+          Founded in 2022 by Rohil Patel, James Langile, and Ean Dela Cruz.
+        </p>
+        <p>
+          Hi! We're students at BCIT under the CST Diploma program. We know
+          very well how busy our lives can get sometimes. Taking 7 courses
+          in our first term gave us the idea to create a scheduling app that
+          will help manage our time. We also thought of those who aren't
+          just students, but people that work part-time or full-time. It's
+          important for us to be able to enjoy life, but it's not always so
+          easy to make that time.
+        </p>
+        <p>
+          The Schedue app is a mobile friendly web application that helps our
+          user find time to make time. We wanted to create a solution for busy
+          students or workers to manage their time, because we know that life
+          can get hectic quickly. The app allows for students and workers to
+          update their calanders with upcomming events that gets converted
+          into their personal to-do list.
+        </p>
         <br>
-        <h1>📖 About ScheDue</h1>
         <hr>
-        <div id="text">
-          <p>
-            Founded in 2022 by Rohil Patel, James Langile, and Ean Dela Cruz.
-          </p>
-          <p>
-            Hi! We're students at BCIT under the CST Diploma program. We know
-            very well how busy our lives can get sometimes. Taking 7 courses
-            in our first term gave us the idea to create a scheduling app that
-            will help manage our time. We also thought of those who aren't
-            just students, but people that work part-time or full-time. It's
-            important for us to be able to enjoy life, but it's not always so
-            easy to make that time.
-          </p>
-          <p>
-            The Schedue app is a mobile friendly web application that helps our
-            user find time to make time. We wanted to create a solution for busy
-            students or workers to manage their time, because we know that life
-            can get hectic quickly. The app allows for students and workers to 
-            update their calanders with upcomming events that gets converted
-            into their personal to-do list.
-          </p>
-          <br>
-          <hr>
-          <br>
-        </div>
+        <br>
+        <!-- <iframe width="420" height="315" src="https://youtu.be/f8iMGfy5_zo">
+        </iframe> -->
       </div>
     </div>
+  </div>
 
-    <!-- ScheDue footer -->
-    <footer id="footerPlaceholder"></footer>
+  <!-- ScheDue footer -->
+  <footer id="footerPlaceholder"></footer>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
 
-    <!-- Link to scripts of your own -->
-    <script src="/scripts/calendar.js"></script>
-    <script src="/scripts/firebaseAPI_BBY06.js"></script>
-    <script src="/scripts/skeleton.js"></script>
-    <script src="/scripts/script.js"></script>
-    <script src="/scripts/main.js"></script>
-  </body>
+  <!-- Link to scripts of your own -->
+  <script src="/scripts/calendar.js"></script>
+  <script src="/scripts/firebaseAPI_BBY06.js"></script>
+  <script src="/scripts/skeleton.js"></script>
+  <script src="/scripts/script.js"></script>
+  <script src="/scripts/main.js"></script>
+</body>
+
 </html>

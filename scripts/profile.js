@@ -65,3 +65,35 @@ function saveUserInfo() {
     });
   document.getElementById("personalInfoFields").disabled = true;
 }
+
+$("#schoolInput").change(function() {
+  if ($(this).val() == "Full-Time") {
+    $('#textfieldSchool').show();
+    $('#typetextfield').attr('required', '');
+    $('#typetextfield').attr('data-error', 'This field is required.');
+  } else if ($(this).val() == "Part-Time") {
+    $('#textfieldSchool').show();
+    $('#typetextfield').attr('required', '');
+    $('#typetextfield').attr('data-error', 'This field is required.');
+  } else {
+    $('#textfieldSchool').hide();
+    $('#typetextfield').removeAttr('required');
+    $('#typetextfield').removeAttr('data-error');
+  }
+});
+
+$("#workInput").change(function() {
+  if ($(this).val() == "Full-Time") {
+    $('#textfieldWork').show();
+    $('#typetextfieldWork').attr('required', '');
+    $('#typetextfieldWork').attr('data-error', 'This field is required.');
+  } else if ($(this).val() == "Part-Time") {
+    $('#textfieldWork').show();
+    $('#typetextfieldWork').attr('required', '');
+    $('#typetextfieldWork').attr('data-error', 'This field is required.');
+  } else {
+    $('#textfieldWork').hide();
+    $('#typetextfieldWork').removeAttr('required');
+    $('#typetextfieldWork').removeAttr('data-error');
+  }
+});
