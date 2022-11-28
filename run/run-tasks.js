@@ -107,7 +107,7 @@ function populateEventInfo() {
         // Check if user is signed in:
         if (user) {
             //go to the correct user document by referencing to the user uid
-            currentUser = db.collection("users").doc(user.uid).collection("schoolCalendar").doc(id);
+            currentUser = db.collection("users").doc(user.uid).collection("schoolCalendar").doc(schoolCalendar.uid);
             //get the document for current user.
             currentUser.get().then((userDoc) => {
                 //get the data fields of the user
