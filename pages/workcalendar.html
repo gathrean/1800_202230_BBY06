@@ -13,7 +13,6 @@
 
   <!-- Styles / Inner CSS -->
   <style>
-
   </style>
 
   <!------------------------------------------>
@@ -36,8 +35,9 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
   <!-- Don't comment out: -->
-  <link href="/fullcalendar/packages/core/main.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script src='/calendar/main.js'></script>
+  <link href='/calendar/main.css' rel='stylesheet'/>
 
   <!-- 
   This import makes the calendar be buggy. When activated, the minimized navbar can't be clicked. But when deactivated, the navbar links are gone -->
@@ -51,16 +51,6 @@
   -->
   <!-- <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" /> -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
-
-  <!-- Full calendar package. -->
-  <link href="/fullcalendar/packages/daygrid/main.css" rel="stylesheet" />
-  <link href="/fullcalendar/packages/bootstrap/main.css" rel="stylesheet" />
-  <link href="/fullcalendar/packages/timegrid/main.css" rel="stylesheet" />
-  <link href="/fullcalendar/packages/list/main.css" rel="stylesheet" />
-  <link href="/fullcalendar/packages/main.css" rel="stylesheet" />
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Link to styles of your own -->
   <link href="/styles/style.css" rel="stylesheet">
@@ -76,48 +66,42 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- Body -->
-  <br><br>
+  <br>
 
   <!-- Calendar -->
   <div class="container text-dark p-5">
-    <div class="container bg-light">
-      <br>
-      <h1>🗓 Calendar</h1>
-      <h6>Schedules, events, and due dates here.</h6>
-      <hr>
+    <!-- <div class="container bg-light"> -->
+    <br>
+    <h1>🗓 Work Calendar</h1>
+    <h6></h6>
+    <hr>
+    <!-- School Calendar-->
+    <div id="workCalendar"></div>
 
-      <!-- The whole calendar. Check out calendar.css if you want to edit. -->
-      <!-- <div id='calendar'></div> -->
-
-      <!-- Comment this and uncomment 'calendar' if you want to go back to the thinner calendar -->
-      <div id="calendar2"></div>
-
-      <!-- CAROUSEL WORK IN PROGRESS -JAMES -->
-      <!-- <div id="calendar3"></div> -->
-      <!-- <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <!-- CAROUSEL WORK IN PROGRESS -JAMES -->
+    <!-- <div id="calendar3"></div> -->
+    <!-- <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div id="calendar2"></div>
+            <div id="schoolCalendar"></div>
             <div class="carousel-caption d-none d-md-block">
               <h5>School Calendar</h5>
-              <p>Some representative placeholder content for the first slide.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <div id="calendar3"></div>
+            <div id="workCalendar"></div>
             <div class="carousel-caption d-none d-md-block">
               <h5>Work Calendar</h5>
-              <p>Some representative placeholder content for the second slide.</p>
             </div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span class="visually-hidden">Previous</span> 
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -125,59 +109,57 @@
         </button>
       </div> -->
 
-      <!-- Button to add an event -->
-      <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Add Event
-      </button>
+    <!-- Button to add an event (Leave for now, I'm gonna see if I can get this to work in the future -James) -->
+    <button type="button" class="btn btn-info" id="addEvent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add Event
+    </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add an Event</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <!-- Details inside of the button -->
-            <form>
-              <div class="modal-body">
-
-                <div class="form-group">
-                  <label for="">Enter Name</label>
-                  <input type="text" class="form-control" id="event-name" name="title" placeholder="">
-                </div>
-
-                <div class="form-group">
-                  <label for="">Choose Colour</label>
-                  <input type="color" class="form-control" id="event-colour" name="color">
-                </div>
-
-                <div class="form-group">
-                  <label for="">Start Date</label>
-                  <input type="datetime-local" class="form-control" id="event-start" name="start_date"
-                    placeholder="YYYY-MM-DD">
-                </div>
-
-                <div class="form-group">
-                  <label for="">End Date</label>
-                  <input type="datetime-local" class="form-control" id="event-end" name="end_date"
-                    placeholder="YYYY-MM-DD">
-                </div>
-
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="addEventInfo()">Add Event</button>
-              </div>
-            </form>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add an Event</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
+          <!-- Details inside of the button -->
+          <form>
+            <div class="modal-body">
+
+              <div class="form-group">
+                <label for="">Enter Name</label>
+                <input type="text" class="form-control" id="event-name" name="title" placeholder="">
+              </div>
+
+              <!-- <div class="form-group">
+                <label for="">Choose Colour</label>
+                <input type="color" class="form-control" id="event-colour" name="color">
+              </div> -->
+
+              <div class="form-group">
+                <label for="">Start Date</label>
+                <input type="date" class="form-control" id="event-start" name="start_date"
+                  placeholder="YYYY-MM-DD">
+              </div>
+
+              <div class="form-group">
+                <label for="">End Date</label>
+                <input type="date" class="form-control" id="event-end" name="end_date"
+                  placeholder="YYYY-MM-DD">
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addWorkEvent()">Add Event</button>
+            </div>
+          </form>
         </div>
       </div>
-      <!-- Quote of the day to cheer the user -->
-      <hr>
-      <p>Quote of the day: <span id="quote-goes-here"></span></p>
     </div>
+    <!-- Quote of the day to cheer the user -->
+    <hr>
+    <p>Quote of the day: <span id="quote-goes-here"></span></p>
   </div>
 
 
@@ -191,26 +173,9 @@
   <!-- Link to scripts of your own -->
   <script src="/scripts/firebaseAPI_BBY06.js"></script>
   <script src="/scripts/skeleton.js"></script>
-  <script src="/scripts/script.js"></script>
-  <script src="/scripts/skeleton.js"></script>
   <script src="/scripts/main.js"></script>
-  <script src="/scripts/calendar.js"></script>
-
-  <!-- JS for calendar-->
-  <script src="/js/jquery-3.3.1.min.js"></script>
-  <script src="/js/popper.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-
-  <!-- Scripts for the calendar package -->
-  <script src="/fullcalendar/packages/core/main.js"></script>
-  <script src="/fullcalendar/packages/interaction/main.js"></script>
-  <script src="/fullcalendar/packages/daygrid/main.js"></script>
-  <script src="/fullcalendar/packages/bootstrap/main.js"></script>
-  <script src="/fullcalendar/packages/timegrid/main.js"></script>
-  <script src="/fullcalendar/packages/list/main.js"></script>
-  <scirpt src="/fullcalendar/packages/interaction/main.js">
-    </script>
-    <script src="/js/main.js"></script>
+  <script src="/scripts/workcalendar.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 
 </html>

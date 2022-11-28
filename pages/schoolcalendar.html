@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BBY06 - ScheDue</title>
+  <meta name="comp1800 template" content="My 1800 App" />
+  <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+  <!-- Styles / Inner CSS -->
+  <style>
+  </style>
+
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
+  <!-- Don't comment out: -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script src='/calendar/main.js'></script>
+  <link href='/calendar/main.css' rel='stylesheet'/>
+
+  <!-- 
+  This import makes the calendar be buggy. When activated, the minimized navbar can't be clicked. But when deactivated, the navbar links are gone -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="/styles/bootstrap1.css" rel="stylesheet">
+
+  <!-- 
+    Commenting the following code out because they interfere with Bootstrap's CSS. 
+    When activated, the whole webpage looks really weird. But I [Ean] will
+    still keep this here for future reference. 
+  -->
+  <!-- <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" /> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+
+  <!-- Link to styles of your own -->
+  <link href="/styles/style.css" rel="stylesheet">
+  <link href="/styles/calendar.css" rel="stylesheet">
+</head>
+
+<body>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
+
+  <!-- ScheDue NavBar -->
+  <nav id="navbarPlaceholder"></nav>
+
+  <!-- Body -->
+  <br>
+
+  <!-- Calendar -->
+  <div class="container text-dark p-5">
+    <!-- <div class="container bg-light"> -->
+    <br>
+    <h1>🗓 School Calendar</h1>
+    <h6></h6>
+    <hr>
+    <!-- School Calendar-->
+    <div id="schoolCalendar"></div>
+
+    <!-- CAROUSEL WORK IN PROGRESS -JAMES -->
+    <!-- <div id="calendar3"></div> -->
+    <!-- <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div id="schoolCalendar"></div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>School Calendar</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div id="workCalendar"></div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Work Calendar</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span> 
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div> -->
+
+    <!-- Button to add an event (Leave for now, I'm gonna see if I can get this to work in the future -James) -->
+    <button type="button" class="btn btn-info" id="addEvent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add Event
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add an Event</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <!-- Details inside of the button -->
+          <form>
+            <div class="modal-body">
+
+              <div class="form-group">
+                <label for="">Enter Name</label>
+                <input type="text" class="form-control" id="event-name" name="title">
+              </div>
+
+              <!-- <div class="form-group">
+                <label for="">Choose Colour</label>
+                <input type="color" class="form-control" id="event-colour" name="color">
+              </div> -->
+
+              <div class="form-group">
+                <label for="">Start Date</label>
+                <input type="date" class="form-control" id="event-start" name="start_date">
+              </div>
+
+              <div class="form-group">
+                <label for="">End Date</label>
+                <input type="date" class="form-control" id="event-end" name="end_date">
+              </div>
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addSchoolEvent()">Add Event</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Quote of the day to cheer the user -->
+    <hr>
+    <p>Quote of the day: <span id="quote-goes-here"></span></p>
+  </div>
+
+
+  <!-- ScheDue footer -->
+  <footer id="footerPlaceholder"></footer>
+
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+
+  <!-- Link to scripts of your own -->
+  <script src="/scripts/firebaseAPI_BBY06.js"></script>
+  <script src="/scripts/skeleton.js"></script>
+  <script src="/scripts/main.js"></script>
+  <script src="/scripts/schoolcalendar.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
