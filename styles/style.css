@@ -4,8 +4,8 @@ body {
   flex-direction: column;
   font-family: 'B612', sans-serif;
   /* background-color: #efefef; */
-  /* background-color: #4fbaf7; */
-  background-color: #deeef7;
+  background-color: #4fbaf7;
+  /* background-color: #deeef7; */
 }
 
 p {

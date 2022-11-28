@@ -79,14 +79,76 @@
       <!-- Progress bar to show user how much they have accomplished. -->
       <h6>Your tasks progress:</h6>
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 25%;"
-          aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 90%;"
+          aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
       </div><br>
 
       <!-- Shows the to-do list -->
-      <h6>Your tasks for today:</h6>
+      <h6>Tasks Summary:</h6>
 
-      <ul class="list-group">
+      <!-- Template for task cards -->
+      <template id="taskCardTemplate">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="task-title">placeholder</h5>
+            <i class="material-icons">done_outline</i>
+          </div>
+        </div>
+      </template>
+
+      <!-- Displays tasks dynamically -->
+      <div class="container">
+        <!-- Here is container for cards  -->
+        <div class="container">
+          <div id="taskCardGroup" class="p-7"></div>
+        </div>
+      </div>
+
+      <!-- Shows the to-do list -->
+      <br><hr>
+      <h6>School Summary:</h6>
+
+      <!-- Template for school events cards -->
+      <template id="schoolEventsTemplate">
+        <div class="card">
+          <div class="schoolEvent-body">
+            <h5 class="schoolEvent-title">placeholder</h5>
+            <i class="material-icons">done_outline</i>
+          </div>
+        </div>
+      </template>
+
+      <!-- Displays school events dynamically -->
+      <div class="container">
+        <!-- Here is container for cards  -->
+        <div class="container">
+          <div id="schoolEventsCardGroup" class="p-7"></div>
+        </div>
+      </div>
+
+      <!-- Shows the to-do list -->
+      <br><hr>
+      <h6>Work Summary:</h6>
+
+      <!-- Template for work events cards -->
+      <template id="workEventsTemplate">
+        <div class="card">
+          <div class="workEvent-body">
+            <h5 class="workEvent-title">placeholder</h5>
+            <i class="material-icons">done_outline</i>
+          </div>
+        </div>
+      </template>
+
+      <!-- Displays work events dynamically -->
+      <div class="container">
+        <!-- Here is container for cards  -->
+        <div class="container">
+          <div id="workEventsCardGroup" class="p-7"></div>
+        </div>
+      </div>
+
+      <!-- <ul class="list-group">
 
         <li class="list-group-item">
           <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
@@ -103,7 +165,7 @@
           <label class="form-check-label" for="thirdCheckbox">CSTampede</label>
         </li>
 
-      </ul>
+      </ul> -->
 
       <!-- Quote of the day to cheer the user -->
       <hr>
@@ -119,10 +181,9 @@
   <!---------------------------------------------->
 
   <!-- Link to scripts of your own -->
-  <script src="/scripts/calendar.js"></script>
   <script src="/scripts/firebaseAPI_BBY06.js"></script>
   <script src="/scripts/skeleton.js"></script>
-  <script src="/scripts/script.js"></script>
+  <script src="/scripts/home.js"></script>
   <script src="/scripts/main.js"></script>
 </body>
 

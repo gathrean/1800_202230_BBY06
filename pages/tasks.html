@@ -42,9 +42,10 @@
   <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
   <!-- Link to styles of your own -->
   <link href="/styles/style.css" rel="stylesheet">
+  <link href="/styles/tasks.css" rel="stylesheet">
 
   <!-- To run tasks -->
-  <link href="/run/run-tasks.css" rel="stylesheet">
+  <!-- <link href="/run/run-tasks.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -54,6 +55,16 @@
 
   <!-- ScheDue NavBar -->
   <nav id="navbarPlaceholder"></nav>
+
+  <!-- Template for task cards -->
+  <template id="taskCardTemplate">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="task-title">placeholder</h5>
+        <i class="material-icons">done_outline</i>
+      </div>
+    </div>
+  </template>
 
   <!-- The task manager -->
   <br><br>
@@ -65,18 +76,40 @@
       <hr>
 
       <!-- Shows the to-do list -->
+      <div class="form-group">
+        <form>
+          <label for="nameInput">Add a task</label>
+          <input class="form-control form-control-lg" type="text" aria-label=".form-control-lg example" id="taskInput">
+          <div class="d-flex justify-content-end mt-3">
+            <button type="button" class="btn btn-primary" onclick="addTask()">Submit</button>
+          </div>
+        </form>
+      </div>
+      <hr>
 
-      <div class="row">
+
+      <!-- Displays tasks dynamically -->
+      <div class="container">
+        <!-- Here is container for cards  -->
+        <div class="container">
+          <div id="taskCardGroup" class="p-7"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- <div class="row">
         <div class="col-md-12">
 
           <div class="card-body">
 
-            <!-- Where user enters their new task -->
+            Where user enters their new task
             <form action="javascript:void(0);">
               <input type="text" class="form-control add-task" placeholder="New Task...">
             </form>
 
-            <!-- Sorting menu -->
+            Sorting menu
             <ul class="nav nav-pills todo-nav">
               <li role="presentation" class="nav-item all-task active"><a href="#" class="nav-link">All</a></li>
               <li role="presentation" class="nav-item active-task"><a href="#" class="nav-link">Active</a>
@@ -84,10 +117,10 @@
               <li role="presentation" class="nav-item completed-task"><a href="#" class="nav-link">Completed</a></li>
             </ul>
 
-            <!-- List of tasks -->
+            List of tasks
             <div class="todo-list list-group">
 
-              <!-- First item -->
+              First item
               <div class="todo-item list-group-item">
                 <div class="checker">
                   <span class="">
@@ -101,7 +134,7 @@
 
               </div>
 
-              <!-- Second item -->
+              Second item
               <div class="todo-item list-group-item">
                 <div class="checker">
                   <span class="">
@@ -114,7 +147,7 @@
                 </a>
               </div>
 
-              <!-- Third item -->
+              Third item
               <div class="todo-item list-group-item">
                 <div class="checker">
                   <span class="">
@@ -127,7 +160,7 @@
                 </a>
               </div>
 
-              <!-- Fourth item -->
+              Fourth item
               <div class="todo-item list-group-item">
                 <div class="checker">
                   <span>
@@ -140,13 +173,32 @@
                 </a>
               </div>
 
+              Fourth item
+              <div class="todo-item list-group-item">
+                <div class="checker">
+                  <span>
+                    <input type="checkbox">
+                  </span>
+                </div>
+                
+                <span id="eventNameInput"></span>
+                
+                <a href="javascript:void(0);" class="float-right remove-todo-item">
+                  <i class="icon-close"></i>
+                </a>
+              </div>
+
             </div>
           </div>
 
         </div>
       </div>
     </div>
+  </div> -->
   </div>
+
+
+
 
   <!-- Body -->
   <!-- <br><br><br>
@@ -168,8 +220,7 @@
       <div class=" col-12">
         <ul class=" list-group" id="list"></ul>
       </div>
-    </div>
-  </div> -->
+    </div>-->
 
   <!-- ScheDue footer -->
   <footer id="footerPlaceholder"></footer>
@@ -179,15 +230,13 @@
   <!---------------------------------------------->
 
   <!-- Link to scripts of your own -->
-  <script src="/scripts/calendar.js"></script>
   <script src="/scripts/firebaseAPI_BBY06.js"></script>
   <script src="/scripts/skeleton.js"></script>
   <script src="/scripts/tasks.js"></script>
-  <script src="/scripts/script.js"></script>
   <script src="/scripts/main.js"></script>
 
   <!-- Runs the task manager -->
-  <script src="/run/run-tasks.js"></script>
+  <!-- <script src="/run/run-tasks.js"></script> -->
 </body>
 
 </html>
