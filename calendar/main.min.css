@@ -275,12 +275,12 @@ a.fc-event:hover {
 
 .fc .fc-toolbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center
 }
 
 .fc .fc-toolbar.fc-header-toolbar {
-    margin-bottom: 1.5em
+    margin-bottom: 2em
 }
 
 .fc .fc-toolbar.fc-footer-toolbar {
