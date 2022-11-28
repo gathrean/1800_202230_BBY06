@@ -14,6 +14,8 @@ function populateInfo() {
         var userCity = userDoc.data().city;
         var userWork = userDoc.data().work;
         var userDescription = userDoc.data().description;
+        var subsectionSchool = userDoc.data().subSchool;
+        var subsectionWork = userDoc.data().subWork;
 
         //if the data fields are not empty, then write them in to the form.
         if (userName != null) {
@@ -30,6 +32,12 @@ function populateInfo() {
         }
         if (userDescription != null) {
           document.getElementById("description").value = userDescription;
+        }
+        if (subsectionSchool != null) {
+          document.getElementById("typetextfield").value = subsectionSchool;
+        }
+        if (subsectionWork != null) {
+          document.getElementById("typetextfieldWork").value = subsectionWork;
         }
       });
     } else {
@@ -52,6 +60,8 @@ function saveUserInfo() {
   userSchool = document.getElementById("schoolInput").value; //get the value of the field with id="schoolInput"
   userWork = document.getElementById("workInput").value; //get the value of the field with id="workInput"
   userDescription = document.getElementById("description").value; //get the value of the field with the id="description"
+  subsectionSchool = document.getElementById("typetextfield").value; //get the value of the field with the id="textfieldSchool"
+  subsectionWork = document.getElementById("typetextfieldWork").value; //get the value of the field with the id="textfieldWork"
 
   currentUser
     .update({
@@ -59,6 +69,8 @@ function saveUserInfo() {
       school: userSchool,
       work: userWork,
       description: userDescription,
+      subSchool: subsectionSchool,
+      subWork: subsectionWork,
     })
     .then(() => {
       console.log("Document successfully updated!");
