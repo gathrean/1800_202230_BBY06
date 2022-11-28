@@ -11,7 +11,8 @@ function addTask() {
             db.collection("users").doc(user.uid).collection("tasks")
                 // Adds each input to a new doc
                 .add({
-                    task: taskname
+                    task: taskname,
+                    time: firebase.firestore.FieldValue.serverTimestamp()
                 }).then((doc) => {
                     console.log(doc.id);
                     window.location.href = "/pages/tasks.html"
