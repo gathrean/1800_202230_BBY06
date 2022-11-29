@@ -83,7 +83,7 @@
               <input type="text" class="form-control" id="typetextfield" placeholder="Type here:">
               <br>
               <label for="exampleFormControlInput1">What program are you enrolled in?</label>
-              <input type="text" class="form-control" id="typetextfield" placeholder="Type here:">
+              <input type="text" class="form-control" id="typetextfieldProgram" placeholder="Type here:">
             </div>
             <br>
             <div class="form-group">
@@ -111,6 +111,19 @@
                   <option value="Not The Best">Not The Best</option>
                   <option value="Stressed">Stressed</option>
                   <option value="Struggling">Struggling</option>
+                </select>
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Colour theme</label>
+                <select name="colours" id="colourTheme" onchange="changeColour(this)">
+                  <option value="Red">Red</option>
+                  <option value="Blue">Blue</option>
+                  <option value="Green">Green</option>
+                  <option value="Yellow">Yellow</option>
+                  <option value="Purple">Purple</option>
+                  <option value="Orange">Orange</option>
+                  <option value="Black">Black</option>
                 </select>
               </div>
               <br>
