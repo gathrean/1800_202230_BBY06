@@ -15,7 +15,9 @@ function populateInfo() {
         var userWork = userDoc.data().work;
         var userDescription = userDoc.data().description;
         var subsectionSchool = userDoc.data().subSchool;
+        var subsectionProgram = userDoc.data().subProgram
         var subsectionWork = userDoc.data().subWork;
+        var colour = userDoc.data().colourchoice;
 
         //if the data fields are not empty, then write them in to the form.
         if (userName != null) {
@@ -36,8 +38,14 @@ function populateInfo() {
         if (subsectionSchool != null) {
           document.getElementById("typetextfield").value = subsectionSchool;
         }
+        if (subsectionProgram != null) {
+          document.getElementById("typetextfieldProgram").value = subsectionProgram;
+        }
         if (subsectionWork != null) {
           document.getElementById("typetextfieldWork").value = subsectionWork;
+        }
+        if (colour != null) {
+          document.getElementById("colourTheme").value = colour;
         }
       });
     } else {
@@ -61,7 +69,9 @@ function saveUserInfo() {
   userWork = document.getElementById("workInput").value; //get the value of the field with id="workInput"
   userDescription = document.getElementById("description").value; //get the value of the field with the id="description"
   subsectionSchool = document.getElementById("typetextfield").value; //get the value of the field with the id="textfieldSchool"
+  subsectionProgram = document.getElementById("typetextfieldProgram").value; //get the value of the field with the id="typetextfieldProgram"
   subsectionWork = document.getElementById("typetextfieldWork").value; //get the value of the field with the id="textfieldWork"
+  colour = document.getElementById("colourTheme").value; //get the value of the field with the id="colourTheme"
 
   currentUser
     .update({
@@ -70,7 +80,9 @@ function saveUserInfo() {
       work: userWork,
       description: userDescription,
       subSchool: subsectionSchool,
+      subProgram: subsectionProgram,
       subWork: subsectionWork,
+      colourchoice: colour
     })
     .then(() => {
       console.log("Document successfully updated!");
@@ -109,3 +121,8 @@ $("#workInput").change(function() {
     $('#typetextfieldWork').removeAttr('data-error');
   }
 });
+
+function changeColour(event) {
+  var colour = event.value;
+  document.getElementsByTagName('body')[0].style.backgroundColor = colour;
+    }
