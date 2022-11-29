@@ -30,7 +30,7 @@ function populateSchoolEvents() {
             let schoolEventsCardGroup = document.getElementById("schoolEventsCardGroup");
 
             db.collection("users").doc(user.uid).collection("schoolCalendar")
-                .orderBy("start").limit(3).get().then(allTasks => {
+                .orderBy("end").limit(3).get().then(allTasks => {
                     allTasks.forEach(doc => {
                         let eventName = doc.data().title; // Gets title field
                         let schoolEventsCard = schoolEventsCardTemplate.content.cloneNode(true);
@@ -54,7 +54,7 @@ function populateWorkEvents() {
             let workEventsCardGroup = document.getElementById("workEventsCardGroup");
 
             db.collection("users").doc(user.uid).collection("workCalendar")
-                .orderBy("start").limit(3).get().then(allTasks => {
+                .orderBy("end").limit(3).get().then(allTasks => {
                     allTasks.forEach(doc => {
                         let eventName = doc.data().title; // Gets title field
                         let workEventsCard = workEventsCardTemplate.content.cloneNode(true);
