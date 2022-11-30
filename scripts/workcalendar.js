@@ -33,21 +33,21 @@ function addWorkEvent() {
   }
 
   // Reads docs from subcollection
-firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-         db.collection("users").doc(user.uid).collection("schoolCalendar")
-            .get().then(querySnapshot => {
-              // For each doc in school calendar subcollection, add to a js array
-                querySnapshot.forEach(doc => {
-                    let check = doc.data().title;
-                    let check2 = doc.data().start;
-                    let check3 = doc.data().end;
-                    schoolEvents = [] + schoolEvents.push({title: check, start: check2, end: check3});
-                })
+// firebase.auth().onAuthStateChanged(user => {
+//     if (user) {
+//          db.collection("users").doc(user.uid).collection("schoolCalendar")
+//             .get().then(querySnapshot => {
+//               // For each doc in school calendar subcollection, add to a js array
+//                 querySnapshot.forEach(doc => {
+//                     let check = doc.data().title;
+//                     let check2 = doc.data().start;
+//                     let check3 = doc.data().end;
+//                     schoolEvents = [] + schoolEvents.push({title: check, start: check2, end: check3});
+//                 })
                 
-            })
-    }
-})
+//             })
+//     }
+// })
 
 
 
@@ -73,7 +73,11 @@ function createworkCalendar() {
      editable: true,
      dayMaxEvents: true, // allow "more" link when too many events
      selectable: true, // select calendar cells
-     events: [],
+     events: [{
+      title: 'Shift',
+      start: '2022-12-10',
+      end: '2022-12-10'
+     }],
 
 
      eventClick: function editEvent(event) {
