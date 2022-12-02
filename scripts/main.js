@@ -20,15 +20,13 @@ function insertName() {
 insertName(); //run the function
 insertName(); //run the function
 
+// Reads quote from the database and displays it on the website.
 function readQuote() {
-    db.collection("quotes").doc("Tuesday")                                                      //name of the collection and documents should matach excatly with what you have in Firestore
-      .onSnapshot(somedoc => {                                                               //arrow notation
-           console.log("current document data: " + somedoc.data());                          //.data() returns data object
-           document.getElementById("quote-goes-here").innerHTML = somedoc.data().quote;      //using javascript to display the data on the right place
-           
-           //Here are other ways to access key:value data fields
-           //$('#quote-goes-here').text(tuesdayDoc.data().quote);                                       //using jquery object dot notation
-           //$("#quote-goes-here").text(tuesdayDoc.data()["quote"]);                                    //using json object indexing
+    db.collection("quotes").doc("Tuesday")                                                      
+      .onSnapshot(somedoc => {
+           console.log("current document data: " + somedoc.data());
+           document.getElementById("quote-goes-here").innerHTML = somedoc.data().quote;
       })
 }
-readQuote();        //calling the function
+// Calls the function
+readQuote();
