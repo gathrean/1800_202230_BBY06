@@ -79,9 +79,8 @@ Outer files of the project folder:
 * 
 
 # Rohil Patel
-* 
-* 
-* 
+* BCIT Email: rpatel124@my.bcit.ca
+* Personal Email: rohilpatel123@outlook.com
 
 ## Other
 Tips for file naming files and folders:
