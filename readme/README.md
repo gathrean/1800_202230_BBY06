@@ -63,7 +63,27 @@ Outer files of the project folder:
 ├── storage.rules
 └── template.html
 ```
+## Resources
+* 
+* 
 
+## Contact
+# Gathrean Dela Cruz
+* BCIT Email: gdelacruz@my.bcit.ca
+* Personal Email: gathrean@icloud.com
+* LinkedIn: https://linkedin.com/in/gathrean
+
+# James Langille
+* 
+* 
+* 
+
+# Rohil Patel
+* 
+* 
+* 
+
+## Other
 Tips for file naming files and folders:
 * use lowercase with no spaces
 * use dashes (not underscore) for word separation
