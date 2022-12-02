@@ -73,6 +73,7 @@ function saveUserInfo() {
   subsectionWork = document.getElementById("typetextfieldWork").value; //get the value of the field with the id="textfieldWork"
   colour = document.getElementById("colourTheme").value; //get the value of the field with the id="colourTheme"
 
+  // Updates the firestore database with the following fields.
   currentUser
     .update({
       name: userName,
@@ -90,6 +91,7 @@ function saveUserInfo() {
   document.getElementById("personalInfoFields").disabled = true;
 }
 
+// If the user selects N/A for being in school, then the sub-categories will dissapear.
 $("#schoolInput").change(function() {
   if ($(this).val() == "Full-Time") {
     $('#textfieldSchool').show();
@@ -106,6 +108,7 @@ $("#schoolInput").change(function() {
   }
 });
 
+// If the user selects N/A for currently working, then the sub-categories will dissapear.
 $("#workInput").change(function() {
   if ($(this).val() == "Full-Time") {
     $('#textfieldWork').show();
@@ -122,6 +125,8 @@ $("#workInput").change(function() {
   }
 });
 
+// This allows the user to change the background colour on the user profile.
+// Function is incomplete as it doesn't save the user's choice.
 function changeColour(event) {
   var colour = event.value;
   document.getElementsByTagName('body')[0].style.backgroundColor = colour;
