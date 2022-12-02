@@ -16,7 +16,7 @@ function populateTasks() {
                 })
         } else {
             console.log("No user signed in");
-            window.location.href = "start.html"
+            window.location.href = "index.html"
         }
     });
 }
@@ -39,8 +39,7 @@ function populateSchoolEvents() {
                     })
                 })
         } else {
-            console.log("No user signed in");
-            window.location.href = "start.html"
+            window.location.href = "index.html"
         }
     });
 }
@@ -63,8 +62,7 @@ function populateWorkEvents() {
                     })
                 })
         } else {
-            console.log("No user signed in");
-            window.location.href = "start.html"
+            window.location.href = "index.html"
         }
     });
 }
