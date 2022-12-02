@@ -10,7 +10,7 @@ This browser based web application to ...
 
 * Hi my name is James. I'm excited about this project because I get to create an application that I'm interested in.
 
-* This is Rohil, I like sports
+* This is Rohil, I'm excited about this project because I get to create something that I relate to.
 
 
 ## Technologies
