@@ -1,3 +1,5 @@
+🚧 I'm still re-organizing this whole repository when I have time after classes, but the whole code is open for everyone.
+
 ## ScheDue
 This browser based web application to help busy people organize their busy schedule and help manage their tasks all in one place!
 <!-- * [General info](#general-info)
