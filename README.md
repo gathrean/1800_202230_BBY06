@@ -4,12 +4,22 @@ This browser based web application to help busy people organize their busy sched
 * [Technologies](#technologies)
 * [Contents](#content) -->
 
-## Meet the team
+## Contact
+# Gathrean Dela Cruz
 * Hi my name is Ean. I am excited about this project because I get to use such a useful tool for my daily life!
+* BCIT Email: gdelacruz@my.bcit.ca
+* Personal Email: gathrean@icloud.com
+* LinkedIn: https://linkedin.com/in/gathrean
 
+# James Langille
 * Hi my name is James. I'm excited about this project because I get to create an application that I'm interested in.
+* BCIT Email: jlangille5@my.bcit.ca
+* Personal Email: langillejames11@gmail.com
 
+# Rohil Patel
 * This is Rohil, I'm excited about this project because I get to create something that I relate to.
+* BCIT Email: rpatel124@my.bcit.ca
+* Personal Email: rohilpatel123@outlook.com
 
 ## Technologies
 Technologies used for this project:
@@ -71,26 +81,4 @@ Firebase hosting files:
 ├── n
 ├── storage.rules
 ```
-## Resources
-* 
-* 
-
-## Contact
-# Gathrean Dela Cruz
-* BCIT Email: gdelacruz@my.bcit.ca
-* Personal Email: gathrean@icloud.com
-* LinkedIn: https://linkedin.com/in/gathrean
-
-# James Langille
-* BCIT Email: jlangille5@my.bcit.ca
-* Personal Email: langillejames11@gmail.com
-
-# Rohil Patel
-* BCIT Email: rpatel124@my.bcit.ca
-* Personal Email: rohilpatel123@outlook.com
-
-## Other
-Tips for file naming files and folders:
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
 
